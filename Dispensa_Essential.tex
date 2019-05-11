@@ -1,0 +1,197 @@
+\documentclass[12pt]{report}
+\usepackage[a4paper,width=150mm,top=25mm,bottom=25mm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{graphicx}
+
+\begin{document}
+  \chapter{Dispense Essential di Probabilità e Statistica}
+
+  \section{Insieme delle parti di $\Omega$: $P(\Omega)$}
+  Dato l'insieme $\Omega$ si dice \textbf{Insieme delle Parti} o \textbf{Insieme Potenza} di $\Omega$ l'insieme $P(\Omega)$ di tutti i possibili sottoinsiemi di $\Omega$.
+
+  \section{Tribù (o $\sigma$-algebra))}
+  Una classe $\mathcal{A}$ di parti di un insieme $\Omega$ si dice una \textbf{Tribù} se:\\
+  \begin{enumerate}
+  \item $\Omega \in \mathcal{A}$
+  \item Se $A \in \mathcal{A}$ allora $A^c \in \mathcal{A}$
+  \item Se $A_1, ... ,A_i, ... \in \mathcal{A}$ allora $\bigcup\limits_{i=1}^{\infty} F_{i}$
+  \end{enumerate}
+
+  \section{Spazio Probabilizzabile}
+  Dato uno spazio campionario $\Omega$ e una tribù $ \mathcal{A}$ su $\Omega$, la coppia $(\Omega,\mathcal{A})$ è detto \textbf{Spazio Probabilizzabile}
+
+  \section{Definizione di Probabilità}
+  Dato uno spazio probabilizzabile $(\Omega,\mathcal{A})$, una \textbf{Probabilità} $Pr$ è un'applicazione $Pr:\mathcal{A} \longrightarrow \mathbb{R}^+$ tale che:
+  \begin{enumerate}
+    \item (non negatività) se $A \in \mathcal{A}$ allora $Pr(A) \geq 0$
+    \item (normalizzazione) $Pr(\Omega) = 1$
+    \item ($\sigma$-addività) Se ${\{A_i\}}_{i=1}^{\infty}$ è una successione di eventi di $\mathcal{A}$ a due a due incompatibili (cioè $A_i \cap A_j = \emptyset, i \neq j$), allora
+    \[ Pr(\bigcup\limits_{i=1}^{\infty} A_i) = \sum_{i=1}^{\infty} Pr(A_i) \]
+  \end{enumerate}
+
+  \section{Spazio proabilizzato}
+  La terna $(\Omega, \mathcal{A}, Pr)$ dove $\Omega$ è uno spaio campionario, $\mathcal{A}$ è una Tribù su $\Omega$ e $Pr$ è una funzione di probabilità $Pr: \mathcal{A} \longrightarrow \mathbb{R^+}$, è detta \textbf{Spazio di Probabilità} o anche spazio di Kolmogrov.
+
+  \section{Regole di calcolo delle probabilità}
+  \subsection{Regola 1}
+  Se $A$ è un evento di probabilità $Pr(A)$ allora la probabilità che $A$ non si verifichi è
+  \[ Pr(A^c)=1-Pr(A) \]
+
+  \subsection{Regola 2}
+  Se $A$ e $B$ sono due eventi, allora la probabilità che se ne verifichi almeno uno è data da
+  \[ Pr(A \cup B) = Pr(A) + Pr(B) - Pr(A \cap B) \]
+
+  \subsection{Regola 3}
+  Se $A$ è un evento che implica l'evento $B$, cioè se $A \subseteq B$, allora
+  \[ Pr(B) = Pr(A) + Pr(B \cap A^c) \geq Pr(A) \]
+
+  \subsection{Regola 4 (Disuguaglianza di Bonferroni)}
+  Se $A_1, A_2, ..., A_n$ non sono eventi, allora
+  \[ \sum_{i=1}^{n} Pr(A_i) - \sum_{1_\leq i \leq j \leq n} Pr(A_i \cap A_j) \leq Pr(\bigcup\limits_{i=1}^{n} A_i) \leq \sum_{i=1}^{n} Pr(A_i),     n \geq 1 \]
+
+  \section{Calcolo combinatorio}
+  \subsection{Disposizioni con ripetizione}
+  Dato un insieme $S = {a_1,a_2,...,a_n}$ di $n$ oggetti distinti, il numero degli allineamenti che si possono formare con $k$ oggetti scelti tra gli $n$ - ritenendo diversi due allineamenti, o perchè contengono oggetti differenti o perche gli stessi oggetti si susseguono in ordine diverso o, infine, perchè uno stesso oggetto si ripete un numero diverso di volte - è dato da
+  \[ D_{n,k}^* = n^k \]
+  Ogni allineamento si dice disposizione con ripetizione di $n$ oggetti di classe $k$.
+
+  \subsection{Disposizioni senza ripetizione}
+  Dato un insieme $S={a_1,a_2,...,a_n}$ di $n$ oggetti distinti, il numero degli allineamenti che si possono formare con $1 \leq k \leq n$ ogetti scelti tra gli $n$ - ritenendo diversi due allineamenti o perchè contengono oggetti differenti o perchè gli stessi oggetti si susseguono in ordine diverso - è dato da
+  \[ D_{n,k} = n(n-1)(n-2)...(n-k + 1) \]
+  Ogni allineamento si dice disposizione semplice o senza ripetizione di $n$ oggetti di classe $k$
+
+  \subsection{Permutazioni}
+  Dato un insieme $S={a_1,a_2,...,a_n}$ di $n$ oggetti distinti, il numero degli allineamenti che si possono formare con tutti essi - ritenendo diversi due allineamenti perchè gli oggetti si susseguono in ordine diverso - è dato da $n!$
+
+  \subsection{Combinazioni}
+  Dato un insieme $S={a_1,a_2,...,a_n}$ di $n$ oggetti distinti, il numero degli allineamenti che si possono formare con $1 \leq k \leq n$ oggetti scelti tra gli $n$ - ritenendo diversi due allineamenti solo perchè contengono oggetti differenti - è dato da
+  \[ C_{n,k} = \frac{D_{n,k}}{k!} \]
+  Ogni allineamento si dice combinazione senza ripetizione di $n$ oggetti di classe $k$
+
+  \section{Cardinalità dell'insieme delle parti di un insieme finito}
+  Sia $S_n={a_1,a_2,...,a_n}$ un insieme di $n$ oggetti distinti, allora la cardinalità di $P(S)$ è $ 2^n$
+
+  \section{Probabilità sui reali}
+  \subsection{Tribù borelliana}
+  Si chiama Tribù Boreliana di $\mathbb{R}$, e si denota con $\mathcal{B}(\mathbb{R})$, la tribù generata su $\mathbb{R}$ dalla classe di tutti gli intervalli $(a,b]$ di $\mathbb{R}$. I suoi elementi si chiamano gli insiemi boreliani di $\mathbb{B}$. e lo spazio $(\mathbb{R},\mathcal{B}(\mathbb{R}))$ è uno spazio probabilizzabile.\\
+  \textbf{Elementi della Tribù Boreliana}\\
+  La tribù di Borel su $\mathbb{R}$ contiene anche i seguenti Elementi
+  \begin{enumerate}
+    \item $(a,b]$
+    \item $[a,b]$
+    \item $[a,b)$
+    \item $(-\infty, b]$
+    \item $(a, \infty)$
+    \item i singoletti di $\mathbb{R}$
+    \item gli insiemi finiti di $\mathbb{R}$
+    \item gli insiemi numerabili di $\mathbb{R}$
+  \end{enumerate}
+
+  \subsection{Costruzione di una funzione di probabilità su $(\mathbb{R},\mathcal{B}(\mathbb{R}))$}
+  Per procedere all'assegnazione di una funzione di Probabilità agli eventi di $\mathcal{B}(\mathbb{R})$, si fissa la probabilità da attribuire agli intervalli $(a,b]$ mediante una funzione $F(x)$ che è
+  \begin{enumerate}
+    \item non decrescente
+    \item continua da destra per ogni $x \in \mathbb{R}: \lim_{x\to x_0^+}(x) = F(x_0)$ per ogni $x_0 \in \mathbb{R}$
+    \item $\lim_{x\to +\infty} F(x) = 1$
+    \item $\lim_{x\to -\infty} F(x) = 0$
+  \end{enumerate}
+  ponendo
+  \[ Pr((a,b]) = F(b) - F(a) \]
+
+  Ad ogni insieme di $\mathcal{B}(\mathbb{R})$ è quindi possibile attribuire una probabilità. Il calcolo effettivo di Pr(A) può essere fatto in modo semplice quando $A$ è
+  \begin{enumerate}
+    \item un intervallo
+    \item un'unione numerabile di intervalli disgiunti
+  \end{enumerate}
+  \[ Pr(\bigcup\limits_{i=1}^{\infty} (a_i,b_i]) = \sum_{i=1}^{\infty} Pr((a_i,b_i]) = \sum_{i=1}^{\infty} (F(b_i)-F(a_i)) \]
+
+  \section{Probabilità condizionale}
+  Sia $(\Omega, \mathcal{A}, Pr)$ uno spazio probabilizzato. Fissato un elemento $h$ di $\mathcal{A}$ con $Pr(H) \neq 0$, si chiama funzione di probabilità dedotta da $Pr$ sotto la condizione $H$ la funzione di probabilità $Pr_H$ sullo spazio $(\Omega, \mathcal{A})$ Probabilizzabile
+  \[ Pr_H(A) = \frac{Pr(A \cap H)}{Pr(H)} \]
+  Per ogni evento $A \in \mathcal{A}$.
+
+  La probabilità $Pr_H(A)$ si chiama \textbf{Probabilità Condizionale} di $A$, secondo $Pr$, sotto la condizione $H$ e si denota
+  \[ Pr(A|H) \]
+
+  \section{Classe Completa di eventi}
+  Dato uno spazio probabilizzabile $(\Omega, \mathcal{A})$ la famiglia di eventi ${\{A_i\}_\infty^{i=1}}$ è detta Classe Completa se
+  \begin{enumerate}
+    \item $\bigcup\limits_{n=1}^{\infty} A_n = \Omega$
+    \item $A_i \cap A_j = \emptyset,  i \neq j$
+  \end{enumerate}
+
+  \section{Teorema delle Probabilità Totali}
+  Sia ${\{A_i\}_\infty^{i=1}}$ una famiglia di eventi che costituisce una Classe Completa di $\Omega$ tale che
+  \[ Pr(A_i) > 0, i = 1,2,... \]
+  Sia $B$ un qualunque evento. allora
+  \[ Pr(B) = \sum_{i=1}^\infty Pr(A_i \cap B) = \sum_{i=1}^\infty Pr(A_i)Pr(B|A_i) \]
+
+  \section{Teorema di Bayes}
+  Sia ${\{A_\}}_{i=1}^\infty$ una Classe Completa di eventi tale che:\\
+  $$Pr(A_i) > 0, i = 1,2,...$$
+  e $B$ un qualunque evento con $Pr(B)>0$. allora
+  $$Pr(A_i|B)=\frac{Pr(A_i)Pr(B|A_i)}{\sum_{j=1}^\infty Pr(A_j)Pr(B|A_j)} \qquad j=1,2,...  $$
+
+  \section{Indipendenza stocastica}
+  In uno spazio probabilizzato $(\Omega, \mathcal{A}, P)$ due eventi $A,B$ si dicono tra loro stotasticamente indipendenti se e solo se
+  $$Pr(A \cap B) = Pr(A) \cdot Pr(B)$$
+
+  In particolare si noti che dati due eventi stocasticamente indipendenti $A, B$ allora:
+  $$Pr(A|B) = \frac{Pr(A \cap B)}{Pr(B)} = Pr(A)$$
+  e lo stesso vale per $Pr(B|A) = Pr(B)$\\
+
+  La nozione di indipendenza può essere estesa a più di due eventi. Vedi NOTE-B P.61
+
+  \section{Tribù indipendenti}
+  Dato uno spazio probabilizzato $(\Omega, \mathcal{A}, Pr)$. Due Tribù contenute in $\mathcal{A}$ si dicono tra loro indipendenti se ogni elemento dell'uno è indipendente da ogni elemento dell'altra.
+
+  \section{Variabile aleatoria}
+  Sia dato lo spazio probabilizzabile $(\Omega, \mathcal{A})$. Si dice \textbf{Variabile aleatoria} (v.a.) ogni funzione a valori reali definita in $\Omega, y = X(\omega)$, tale che
+  $$ \{\omega \in \Omega : X(\omega) \leq x\} \in \mathcal{A} $$ per ogni valore reale $x$.
+  \begin{enumerate}
+    \item Giova osservare che nella definizione la probabilità non gioca alcun ruolo e che quando $\mathcal{A}$ è la classe di tutti i sottoinsiemi di $\Omega$ la condizione nella definizione è sempre soddisfatta.
+    \item Per rendersi conto della necessitò di imporre alla funzione $X(\omega)$ la condizione riportata sopra, basterà dire che, intendendo assegnare una probabilità agli insiemi $\{\omega \in \Omega : X(\omega) \leq x\}$ per ogni reale $x$ ed avendo probabilizzato la classe $\mathcal{A}$, occore che tali insiemi appartengano ad $A$.
+  \end{enumerate}
+
+  \section{Variabili aleatorie e Tribù}
+  Siano $\tilde{\Omega}$ e $\Omega$ due insiemi arbitrari e sia $X: \tilde{\Omega} \rightarrow \Omega$ una funzione. Se $\mathcal{A}$ è una Tribù su $\Omega$ allora:
+  $$ \tilde{\mathcal{A}} = \{ X^{-1}(A):A \in \mathcal{A} \} $$
+  è una Tribù su $\tilde{\Omega}$.
+
+  \subsection{Teorema}
+  Siano $\tilde{\Omega}$ e $\Omega$ due insiemi arbitrari e sia $X: \tilde{\Omega} \rightarrow \Omega$ una funzione. Se $\mathcal{A}$ è una Tribù su $\Omega$ allora:
+  $$ \tilde{\mathcal{A}} = \{ A \in \subseteq \Omega: X^{-1}(A) \in \tilde{\mathcal{A}}\} $$
+
+  \subsection{Teorema}
+  Ogni funzione contiuna oppure monotona crescente o decrescente $f:(\mathbb{R},\mathcal{B}(\mathbb{R})) \rightarrow (\mathbb{R},\mathcal{B}(\mathbb{R})) $ è una variabile aleatoria.
+
+  \section{Variabili aleatorie e funzioni di probabilità p.71}
+  \section{Variabili aleatorie discrete}
+  Una v.a. $X$ definita su $(\Omega, \mathcal{A})$ è detta discreta se i valori distinti dell'insieme $\bicup_{\omega \in \Omega} \{ {X(\omega)} \}$ costituiscono un insieme $R_X$ finito o numerabile.
+
+  \subsection{Funzione di probabilità (o densità discreta)}
+  Se $X$ è una v.a. discreta con $R_X = {x_1,x_2,...}$, allora la funzione, definita in $\mathbb{R}$, data da
+  \[ p(x) =
+    \left \{
+      \begin{tabular}{cc}
+         Pr(X = x_i) \g 0 & x = x_i \in R_X \\
+         0  & x \not\in R_X
+      \end{tabular}
+  \]
+  è detta funzione di probabilità (o densità discreta) della v.a.$X$, $R_X$ viene desso supporto della v.a. $X$.
+
+  \subsection{Teorema}
+  Se $X$ è una v.a. discreta con $R_X = \{ x_1,x_2,... \}$ allora
+  \[ p(x) \geq 0 \] per ogni x reale e \[ \sum_{x\in R_X} p(x) = 1 \]
+
+  \subsection{Distribuzione Binomiale}
+  Si dice che una v.a. $X$ si distribuisce secondo la distribuzione di probabilità (o legge) binominale di parametri $N \geq 1$ (intero) e $0 \leq p \leq 1$, se
+
+
+
+\end{document}
