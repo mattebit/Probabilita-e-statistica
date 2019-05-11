@@ -172,16 +172,16 @@
 
   \section{Variabili aleatorie e funzioni di probabilità p.71}
   \section{Variabili aleatorie discrete}
-  Una v.a. $X$ definita su $(\Omega, \mathcal{A})$ è detta discreta se i valori distinti dell'insieme $\bicup_{\omega \in \Omega} \{ {X(\omega)} \}$ costituiscono un insieme $R_X$ finito o numerabile.
+  Una v.a. $X$ definita su $(\Omega, \mathcal{A})$ è detta discreta se i valori distinti dell'insieme $\bigcup_{\omega \in \Omega} \{ {X(\omega)} \}$ costituiscono un insieme $R_X$ finito o numerabile.
 
   \subsection{Funzione di probabilità (o densità discreta)}
   Se $X$ è una v.a. discreta con $R_X = {x_1,x_2,...}$, allora la funzione, definita in $\mathbb{R}$, data da
-  \[ p(x) =
-    \left \{
-      \begin{tabular}{cc}
+  \[
+    p(x) =
+      \begin{cases}
          Pr(X = x_i) \g 0 & x = x_i \in R_X \\
          0  & x \not\in R_X
-      \end{tabular}
+      \end{cases}
   \]
   è detta funzione di probabilità (o densità discreta) della v.a.$X$, $R_X$ viene desso supporto della v.a. $X$.
 
@@ -191,7 +191,40 @@
 
   \subsection{Distribuzione Binomiale}
   Si dice che una v.a. $X$ si distribuisce secondo la distribuzione di probabilità (o legge) binominale di parametri $N \geq 1$ (intero) e $0 \leq p \leq 1$, se
+  \[
+    Pr(X = x) =
+      \begin{cases}
+          \binom{N}{x}p^x(1-p)^{N-x} & x = 0, 1, ..., N \\
+          0 & altrimenti
+      \end{cases}
+  \]
+   E scriveremo $ X ~ Bi(N,p) $, dove $n$ è il numero di prove effettuate, e $p$ è la probabilità di successo della singola prova.
+   \subsubsection{In altre parole}
+   La distibuzione binomiale descrive la probabilità di avere esattamente $x$ successi, provando $N$ volte, con $p$ probabilità di vittoria di un singolo evento.
 
+   \subsection{Funzione di ripartizione}
+   Sia $X$ una v.a.. Si dice funzione di ripartizione della v.a. $X$ la funzione $y=F(x)$, definita per ogni $x$ reale, data da
+   \[ F(x) = Pr(X \leq x) \quad x \in \mathbb{R} \]
+
+  \subsubsection{Funzione di ripartizione e funzione di probabilità}
+  Per una v.a. discreta, si osservi, a conferma delle propietà generali della funzione di ripartizione, come i punti di discontinuità di $F(x)$ coincidano con i punti di $R_X$ della v.a. e che l'ampiezza del salto in detti punti corrisponde alla funzione di probabilità, cioè
+  \[ p(X=x) = F(x) - F(X^-) \]
+
+  \subsection{Distribuzione Geometrica}
+  La distribuzione Geometrica nasce con riferimento allo stesso schema che ha condotto alla distribuzione Binomiale ma ora, anzichè contare il numero di successi in $N$ prove indipendenti, interessa il numero delle prove necessarie per ottenere il primo successo.\\
+
+  Si dice che una v.a. $X$ si distribuisce secondo una distribuzione geometrica di parametro $0 \leq p \leq 1$ se la sua funzione di probabilità è
+
+  \[
+    Pr(X=x)=
+      \begin{cases}
+        p(1-p)^{x-1} & x = 1,2,3,... \\
+        0 & altrove
+      \end{cases}
+  \]
+  e scriveremo $X ~ Ge(p)$.
+
+p81.
 
 
 \end{document}
