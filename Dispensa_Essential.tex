@@ -198,7 +198,7 @@
           0 & altrimenti
       \end{cases}
   \]
-   E scriveremo $ X ~ Bi(N,p) $, dove $n$ è il numero di prove effettuate, e $p$ è la probabilità di successo della singola prova.
+   E scriveremo $ X \sim Bi(N,p) $, dove $n$ è il numero di prove effettuate, e $p$ è la probabilità di successo della singola prova.
    \subsubsection{In altre parole}
    La distibuzione binomiale descrive la probabilità di avere esattamente $x$ successi, provando $N$ volte, con $p$ probabilità di vittoria di un singolo evento.
 
@@ -222,9 +222,48 @@
         0 & altrove
       \end{cases}
   \]
-  e scriveremo $X ~ Ge(p)$.
+  e scriveremo $X \sim Ge(p)$.
+  \subsubsection{Funzione di ripartizione}
+  \[ F(x) =   1-(1-p)^x \]
 
-p81.
+  \subsection{Distribuzione Binomiale negativa (o di Pascal)}
+  Si dice che una v.a. $X$ si distribuisce secondo la distribuzione binomiale negativa di parametri $0 < p \leq 1$ e $r \geq 1$ (intero) se la sua funzione di probabilità è data da
+
+  \[
+    Pr(X=x)=
+      \begin{cases}
+          \binom{x-1}{r-1} p^r (1-p)^{x-r} & x=r, r+1, r+2,... \\
+          0 & altrove
+      \end{cases}
+  \]
+
+  e indichiamo con $X \sim BiNe(r,p)$.
+
+  \subsubsection{In altre parole}
+  La distribuzione di Pascal dà la probabilità che siano necessari esattamente $x$ fallimenti per avere $r$ successi. $p$ è la probabilità di un singolo successo.
+
+  \subsubsection{Relazione tra Binomiale e Binomiale negativa (Teorema)}
+  Sia $x \sig BiNe(r,p)$ e $Z \sig Bi(N,p)$ allora
+  \[ Pr(Z \geq r) = Pr(X \leq N) \]
+
+  \section{Variabili aleatorie continue}
+  Una v.a. $X$ definita su $(\Omega, \mathcal{A})$ è detta continua se la sua funzione di ripartizione è continua.
+
+  \subsection{Densità}
+  Si dice che la v.a. $X$ è dotata di densità se la probabilità con cui $X$ assume valori nell'intervallo $(a,b]$ è data mediante la formula
+
+  p.89
+
+
+
+
+
+
+
+
+
+
+
 
 
 \end{document}
