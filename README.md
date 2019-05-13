@@ -1,1 +1,1 @@
-# Probabilita-e-statistica
+# Dispense "essenziali" del corso di Probabilità e Statistica
