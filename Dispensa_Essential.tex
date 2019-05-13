@@ -202,6 +202,12 @@
    \subsubsection{In altre parole}
    La distibuzione binomiale descrive la probabilità di avere esattamente $x$ successi, provando $N$ volte, con $p$ probabilità di vittoria di un singolo evento.
 
+   \subsubsection{Propietà}
+   \begin{enumerate}
+     \item Media: $\mathbb{E}(X) = Np$
+     \item Varianza: $\mathbb{V}ar(X) = Np(1-p)$
+   \end{enumerate}
+
    \subsection{Funzione di ripartizione}
    Sia $X$ una v.a.. Si dice funzione di ripartizione della v.a. $X$ la funzione $y=F(x)$, definita per ogni $x$ reale, data da
    \[ F(x) = Pr(X \leq x) \quad x \in \mathbb{R} \]
@@ -223,8 +229,14 @@
       \end{cases}
   \]
   e scriveremo $X \sim Ge(p)$.
-  \subsubsection{Funzione di ripartizione}
-  \[ F(x) =   1-(1-p)^x \]
+  \subsubsection{Propietà}
+  \begin{enumerate}
+    \item Funzione di ripartizione: $F(x) =   1-(1-p)^x$
+    \item Momento secondo: $ \mathbb{E}(X^2) = \frac{2-p}{p^2} $
+    \item Varianza: $ \mathbb{V}ar(X) = \mathbb{E}(X^2) - [\mathbb{E}(X)]^2 = \frac{1-p}{p^2} $
+  \end{enumerate}
+
+
 
   \subsection{Distribuzione Binomiale negativa (o di Pascal)}
   Si dice che una v.a. $X$ si distribuisce secondo la distribuzione binomiale negativa di parametri $0 < p \leq 1$ e $r \geq 1$ (intero) se la sua funzione di probabilità è data da
@@ -243,7 +255,7 @@
   La distribuzione di Pascal dà la probabilità che siano necessari esattamente $x$ fallimenti per avere $r$ successi. $p$ è la probabilità di un singolo successo.
 
   \subsubsection{Relazione tra Binomiale e Binomiale negativa (Teorema)}
-  Sia $x \sig BiNe(r,p)$ e $Z \sig Bi(N,p)$ allora
+  Sia $X \sim BiNe(r,p)$ e $Z \sim Bi(N,p)$ allora
   \[ Pr(Z \geq r) = Pr(X \leq N) \]
 
   \section{Variabili aleatorie continue}
@@ -252,15 +264,68 @@
   \subsection{Densità}
   Si dice che la v.a. $X$ è dotata di densità se la probabilità con cui $X$ assume valori nell'intervallo $(a,b]$ è data mediante la formula
 
-  p.89
+  \[ Pr(X \in (a,b]) = Pr(a < X \leq b) = \int_{a}^{b} f(x)  dx \]
+  in cui $f(x)$ prende il nome di funzione di densità di probabilità della v.a. $X$ e deve avere le seguenti caratteristiche
+  \begin{enumerate}
+    \item $f(x) > 0$ per ogni $x \in \mathbb{R}$
+    \item $\int_{-\infty}^{+\infty} f(x) dx = 1$
+  \end{enumerate}
+
+  \subsection{Variabili aleatorie assolutamente continue}
+  Una v.a. $X$ definita su $(\Omega, \mathcal{A})$ è detta assolutamente continua se la sua funzione di ripartizione è continua e la sua v.a. $X$ ammette densità.
+
+  \subsection{Densità e funzione di ripartizione}
+  Per una v.a. $X$ assolutamente continua con densità $f(x)$ e con funzione di ripartizione $F(x)$ abbiamo:
+  \[ Pr(X \in (a,b]) = \int_{a}^{b} f(x) dx = F(b) - F(a) \]
+
+  \subsection{Distribuzione Normale (o di Gauss)}
+  Si dice che una v.a. $X$ si distribuisce con legge di probabilità Normale (o Gaussiana) di parametri $-\infty < \mu < +\infty$ e $ 0 < \sigma < +\infty$ se possiede la seguente densità.
+
+  \[ f(x,\mu,\sigma) = \frac{1}{\sqrt{(2 \pi \sigma^2)}} e^{( -\frac{1}{2} \frac{(x-\mu)^2}{\sigma^2})} \]
+
+  e la indichiamo con $X \sim N(\mu, \sigma^2)$. La v.a. $X \sim N(0,1)$ è chiamata Normale Standard.
+
+  \subsection{Distribuzione Esponenziale}
+  Si dice che una v.a. $X$ ha legge Esponenziale con parametro $\lambda >0$ se la sua funzione di densità
+  \[
+    f(x;\lambda) =
+    \begin{cases}
+      \lambda e^{(-\lambda x)} & x > 0 \\
+      0 & altrove
+    \end{cases}
+  \]
+
+  e la indichiamo nel seguente modo $X \sim Exp(\lambda)$. La distribuzione Esponenziale è senza memoria.
+  \subsubsection{Funzione di ripartizione}
+  \[ F(x) = 1-e^{-\lambda x} \]
+
+  \subsection{Trasformazione di variabili aleatorie p.104 (manca)}
+
+  \section{Speranza matematica o valore atteso per v.a. discrete}
+  Sia $X$ una v.a. discreta con funzione di probabilità $p_X(x)$. Allora, si chiama speranza matematica di $X$ la quantità (finita)
+  \[ \mathbb{E}(X) = \sum_{x \in R_X} x p_X(x) \]\\
+
+  Sia $X$ una v.a. dotata di densità $f_X(x)$ e funzione di ripartizione $F_X(x)$. Si chiama speranza matematica di $X$ la quantità (finita).
+  \[ \mathbb{E}(X) = \int_{-\infty}^{+\infty} x f_X(x) dx \]
+
+  \section{Momenti}
+  Data la v.a. $X$ si dice momento non centrato di ordine $r$ (intero positivo) il valore
+  \[ \mu_r = \mathbb{E}(X^r)\]
+  e si dice momento centrato dalla media di ordine r
+  \[ \bar{\mu_r} = \mathbb{E}((x-\mu_1)^r)  \]
+
+  \subsubsection{Valori di sintesi basati sui momenti}
+  \begin{enumerate}
+    \item Media: $ \mu = \mu_1 = \mathbb{E}(X) $
+    \item Varianza: $ \mathbb{V}ar(X) = \sigma^2 = \bar{\mu_2} = \mathbb{E}((x-\mu_1)^2) = \mathbb{E}(X^2) - \mathbb{E}(X)^2 $
+    \item Deviazione standard: $ \sigma = \sqrt{\sigma^2} $
+  \end{enumerate}
 
 
 
 
 
-
-
-
+p.126
 
 
 
