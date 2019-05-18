@@ -285,6 +285,18 @@
 
   e la indichiamo con $X \sim N(\mu, \sigma^2)$. La v.a. $X \sim N(0,1)$ è chiamata Normale Standard.
 
+  \subsubsection{Proprietà}
+  \begin{enumerate}
+    \item Valore atteso: $\mathbb{E}(X) = \mu$
+    \item Varianza: $\mathbb{V}ar(X) = \sigma^2$
+  \end{enumerate}
+
+  \subsection{Standardizzazione di una Normale}
+  Data una $X \sim N(\mu,\sigma^2)$, Allora
+  \[ Z = \frac{X-\mu}{\sigma} \sim N(0,1) \]
+  Questa operazione viene chiamata Standardizzazione
+
+
   \subsection{Distribuzione Esponenziale}
   Si dice che una v.a. $X$ ha legge Esponenziale con parametro $\lambda >0$ se la sua funzione di densità
   \[
@@ -296,8 +308,14 @@
   \]
 
   e la indichiamo nel seguente modo $X \sim Exp(\lambda)$. La distribuzione Esponenziale è senza memoria.
-  \subsubsection{Funzione di ripartizione}
-  \[ F(x) = 1-e^{-\lambda x} \]
+  \subsubsection{Propietà}
+  \begin{enumerate}
+    \item Media: $\mathbb{E}(X) = \frac{1}{\lambda}$
+    \item Varianza: $\mathbb{V}ar(X) = \frac{1}{\lambda^2}$
+    \item Funzione di ripartizione: $F(x) = 1-e^{-\lambda x}$
+    \item Il minimo $Y = min\{X_1,...,X_n\} $ tra $n$ variabili aleatorie indipendenti con distribuzioni esponenziali di parametri $ \lambda_1,...,\lambda_n $ è ancora una variabile aleatoria con distribuzione esponenziale, di parametro $ \lambda = \lambda_1 + ... + \lambda_n$.
+  \end{enumerate}
+
 
   \subsection{Trasformazione di variabili aleatorie p.104 (manca)}
 
@@ -321,11 +339,56 @@
     \item Deviazione standard: $ \sigma = \sqrt{\sigma^2} $
   \end{enumerate}
 
+  \section{Variabili Aleatorie Doppie}
+  Sia $(\Omega, \mathcal{A}, Pr)$ uno spazio probabilizzato. Siano $X(\omega)$ e $Y(\omega)$ due v.a. definite su $\Omega$ in modo che:
+  \[ Z(\omega) = (X(\omega),Y(\omega)) : \Omega \rightarrow \mathbb{R}^2 \]
+
+    $Z(\omega)$ è detta v.a. doppia e $R_Z = R_{X,Y} = \{(x,y):x \in R_X,y \in R_Y\}$\\
+
+  Resta da definire la funzione di probabilità di $Z(\omega)$. Le funzioni di ripartizione $F_X(x)$ e $F_Y(y)$ di $X$ e $Y$ rispettivamente, in genere non sono sufficienti per determinare tale propietà.
+
+    E' necessario considerare la seguente funzione di ripartizione (detta congiunta)
+  \[ F_Z(z) = F_{X,Y}(x,y) = Pr(\{ X \leq x\} \cap \{ Y \leq y \}) \quad\quad (x,y)\in R_{X,Y} \]
+
+  \subsection{Funzione di probabilità congiunta (discreta)}
+  Per due v.a. discrete $X$ e $Y$, la v.a. doppia $Z=(X,Y)$ (che è discreta) ha funzione di probabilità (congiunta)
+
+  \[
+    P_Z(z) =
+    \begin{cases}
+      p_{X,Y}(x,y) = Pr(\omega : \{ X(\omega) = x \} \cap \{ Y(\omega) = y \}) & (x,y) \in R_{X,Y}\\
+      0 & altrove
+    \end{cases}
+  \]
+
+  \subsection{Variabili aleatorie doppie dotate di densità}
+  La v.a. doppia $Z= (X,Y)$ si dirà dotata di densità se esiste una funzione $f_{X,Y}(x,y)$ tale che
+  \begin{enumerate}
+    \item $f_{X_Y}(x,y) \geq 0, \quad \forall (x,y) \in \mathbb{R}^2$
+    \[ \int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty} f_{X,Y}(x,y)\: dx\: dy \]
+    \item \[Pr(a < x \leq b, c < y \leq d) = \int_{-\infty}^{x}\int_{-\infty}^{y} f_{X,Y}(u,v)\: du\: dv \]
+
+  \end{enumerate}
+  tale funzione è chiamata densità congiunta $f_Z(z) = f_{X,Y}(x,y)$.
+
+  \subsubsection{Densità marginali}
+  Dalle formule di prima abbiamo che
+  \[ F_{X,Y}(x,y) = \int_{-\infty}^{x}\int_{-\infty}^{y} f_{X,Y}(u,v)\: du\: dv\]
+    E quindi
+  \begin{enumerate}
+    \item Densità marginale della v.a. $X$ \[f_X(x) = \int_{-\infty}^{+\infty} f_{X,Y}(x,v)\: dv\]
+    \item Denstià marginale della v.a. $Y$ \[f_Y(y) = \int_{-\infty}^{+\infty} f_{X,Y}(u,y)\: du\]
+  \end{enumerate}
+
+  \subsection{Distribuzioni condizionali per v.a. (Probabilità condizionale di $X|Y = y$)}
+  Sia $(X,Y)$ una v.a. doppia discreta con funzione di probabilità
+  \[ p_{X,Y}(x,y) = Pr(X = x, Y = y) \]
+    allora in accordo con la definizione di probabilità condizionale
+
+  \[ p_{X_Y}(X=x|Y=y) = Pr(\{ X=x \}|\{ Y=y \}) = \frac{p_{X,Y}(x,y)}{p_Y(y)} \quad y \in R_Y(p_Y(y)>0) \]
+  Per ogni valore fissato di $y \in R_Y$ la funzione $p_{X|Y}(X=x|Y=y)$ prende il nome di probabilità condizionale di $X|Y = y$
 
 
-
-
-p.126
 
 
 
