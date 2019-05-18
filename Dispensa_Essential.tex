@@ -1,14 +1,15 @@
-\documentclass[12pt]{report}
-\usepackage[a4paper,width=150mm,top=25mm,bottom=25mm]{geometry}
+\documentclass[a4paper]{report}
+\usepackage[top=25mm,bottom=25mm]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage[italian]{babel}
-\usepackage{amsfonts}
-\usepackage{amsmath}
+\usepackage[T1]{fontenc}
 \usepackage{amssymb}
-\usepackage{hyperref}
+\usepackage{mathtools}
 \usepackage{graphicx}
+\usepackage{hyperref}
 
 \begin{document}
+  \tableofcontents
   \chapter{Dispense Essential di Probabilità e Statistica}
 
   \section{Insieme delle parti di $\Omega$: $P(\Omega)$}
@@ -387,6 +388,20 @@
 
   \[ p_{X_Y}(X=x|Y=y) = Pr(\{ X=x \}|\{ Y=y \}) = \frac{p_{X,Y}(x,y)}{p_Y(y)} \quad y \in R_Y(p_Y(y)>0) \]
   Per ogni valore fissato di $y \in R_Y$ la funzione $p_{X|Y}(X=x|Y=y)$ prende il nome di probabilità condizionale di $X|Y = y$
+
+  \subsection{Distribuzioni condizionali e indipendenza per v.a. (p137 dispense B)}
+
+  \subsection{Funzioni di ripartizione condizionale}
+  Dalla funzione di probabilità confizionale (nel caso discreto) e dalla densità condizionale (nel caso assolutamente continuo), possiamo costruire le funzioni di ripartizione condizionale
+  \[ F_{X|Y}(x|y) = \sum_{u \leq x \: : \: \in R_X} p_{X|Y}(u|y) \]
+  e
+  \[ F_{X|Y}(x|y) = \int_{-\infty}^{x} f_{X|Y}(u|y) \: du \]
+
+
+
+
+
+
 
 
 
