@@ -391,11 +391,47 @@
 
   \subsection{Distribuzioni condizionali e indipendenza per v.a. (p137 dispense B)}
 
-  \subsection{Funzioni di ripartizione condizionale}
+  \subsection{Funzioni di ripartizioni condizionali}
   Dalla funzione di probabilità confizionale (nel caso discreto) e dalla densità condizionale (nel caso assolutamente continuo), possiamo costruire le funzioni di ripartizione condizionale
   \[ F_{X|Y}(x|y) = \sum_{u \leq x \: : \: \in R_X} p_{X|Y}(u|y) \]
   e
   \[ F_{X|Y}(x|y) = \int_{-\infty}^{x} f_{X|Y}(u|y) \: du \]
+
+  \subsection{Variabili aleatorie condiionali e speranza matematica}
+  Data la v.a. doppia $(X,Y)$ allora la funzione $X|Y = y \: (y \in R_Y)$ è una v.a. con funzione di probabilità $P_{X|Y}(x|y)$.
+    Quindi alla definizione di speranza matematica e di varianza abbiamo
+
+  \[\mathbb{E}(X|Y=y)= \quad \sum_{x \in R_X} x p_{X|Y}(x|y) \]
+  \[ var(X|Y=y)= \quad \sum_{x\in R_X}(x - \mathbb{E}(X|Y=y))^2 p_{X|Y}(x|y) \]
+  e in maniera del tutto analoga nel caso di v.a. dotate di densità.
+
+  \subsection{Speranza matematica della speranza matematica condizionale}
+  Ad esempio per v.a. doppie discrete (??il risultato vale nel caso generale??)
+  \[ \mathbb{E}(\mathbb{E}(X|Y)) = \mathbb{E}(X) \]
+
+  \subsection{Varianza e Varianza condizionale (Scomposizione della varianza)}
+  Sia $(X,Y)$ una v.a doppia, allora
+  \[ \mathbb(V)ar(X) = \mathbb{E}(\mathbb{V}ar(X|Y)) + \mathbb{V}ar(\mathbb{E}(X|Y)) \]
+
+  \subsection{Dipendenza in media}
+  La v.a. $X$ si dice indipendente in media da $Y$ se
+  \[ \mathbb{E}(X|Y=y) = \mathbb{E}(X) \quad \forall y \in R_Y \]
+
+  Si noti che se $X$ è indipendente stocasticamente da Y allora è anche indipendente in media. Viceversa non è vero, in generale.
+
+  %sostituire n con il simbolo giusto p.142
+  \subsection{Rapporto di correlazione}
+  Sia $(X,Y)$ una v.a. doppia discreta, si chiama rapporto di correlazione di $X$ dato $Y$
+  \[ n^2_{X|Y} = \frac{\mathbb{V}ar(\mathbb{E}(X|Y))}{\mathbb{V}ar(X)} = 1- \frac{\mahtbb{E}(\mathbb{V}ar(X|Y))}{\mathbb{V}ar(X)} \quad \mathbb{V}ar(X) > 0\]
+
+  E in modo analogo si definisce $n_{X|Y}^2$. Dalla formula della scomposizione della varianza è facile vedere che:
+  \[ 0 \leq n_{X|Y}^2 \leq 1 \]
+
+  inoltre
+  %Elenco puntato invece che numerato
+  \begin{enumerate}
+    \item se 
+  \end{enumerate}
 
 
 
