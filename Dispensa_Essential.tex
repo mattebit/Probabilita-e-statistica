@@ -419,18 +419,19 @@
 
   Si noti che se $X$ è indipendente stocasticamente da Y allora è anche indipendente in media. Viceversa non è vero, in generale.
 
-  %sostituire n con il simbolo giusto p.142
   \subsection{Rapporto di correlazione}
   Sia $(X,Y)$ una v.a. doppia discreta, si chiama rapporto di correlazione di $X$ dato $Y$
-  \[ n^2_{X|Y} = \frac{\mathbb{V}ar(\mathbb{E}(X|Y))}{\mathbb{V}ar(X)} = 1- \frac{\mahtbb{E}(\mathbb{V}ar(X|Y))}{\mathbb{V}ar(X)} \quad \mathbb{V}ar(X) > 0\]
+  \[ \eta^2_{X|Y} = \frac{\mathbb{V}ar(\mathbb{E}(X|Y))}{\mathbb{V}ar(X)} = 1- \frac{\mahtbb{E}(\mathbb{V}ar(X|Y))}{\mathbb{V}ar(X)} \quad \mathbb{V}ar(X) > 0\]
 
-  E in modo analogo si definisce $n_{X|Y}^2$. Dalla formula della scomposizione della varianza è facile vedere che:
-  \[ 0 \leq n_{X|Y}^2 \leq 1 \]
+  E in modo analogo si definisce $\eta_{X|Y}^2$. Dalla formula della scomposizione della varianza è facile vedere che:
+  \[ 0 \leq \eta_{X|Y}^2 \leq 1 \]
 
   inoltre
   %Elenco puntato invece che numerato
   \begin{enumerate}
-    \item se 
+    \item se $\eta_{X|Y}^2 = 0$ allora $X$ è indipendente in media da $Y$
+    \item se $\eta_{X|Y}^2 > 0$ allora $X$ è indipendente in media da $Y$
+    \item $\eta_{X|Y}^2 = 1$ se e solo se $Pr(X = \mathbb{E}(X|Y)) = 1$
   \end{enumerate}
 
 
