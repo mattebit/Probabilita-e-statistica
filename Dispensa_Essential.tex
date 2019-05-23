@@ -434,6 +434,48 @@
     \item $\eta_{X|Y}^2 = 1$ se e solo se $Pr(X = \mathbb{E}(X|Y)) = 1$
   \end{enumerate}
 
+  %modificare il simbolo di prodotto con uno più decente
+  \subsection{Covarianza e correlazione}
+  La covarianza e la correlazione sono altri due indici di dipendenza (lineare) tra due v.a.
+  \[ cov(X,Y) = \mathbb{E}(X * Y) - \mathbb{E}(X) * \mathbb{E}(Y) \]
+  mentre
+  \[ \rho(X,Y) = \frac{cov(X,Y)}{\sqrt{\mathb{V}ar(X)*\mathbb{V}ar(Y)}} \]
+
+  \subsection{Varianza di una combinazione lineare di v.a}
+  Sia $(X,Y)$ una v.a. doppia e $a$ e $b$ due costanti. Allora
+  \[ \mathbb{V}ar(aX + bY)= a^2\mathbb{V}ar(X) + b^2\mathbb{V}ar(Y) + 2abcov(X,Y) \]
+
+  %Skippato il chi^2 di pearson p.143 disp. B
+
+  \chapter{Teoremi limite della probabilità}
+  \section{Legge debole dei grandi numeri}
+  Ci sono diversi modi per esprimere il fatto che $S_n/n$ si avvicina a $p$. Potremmo ad esempio scrivere che, per $n$ grande e per $\epsilon$ piccolo a piacere
+
+  \[ Pr\{ |S_n/n -p| \geq \epsilon \} \approx 0 \]
+  o equivalentemente
+  \[ \lim_{n \rightarrow +\infty} Pr\{ |S_n/n -p| \geq \epsilon \} = 0 \]
+  in simboli questo tipo di convergenza si denota con
+  %Trovare come scrivere la p sopra la freccia
+  \[ p \]
+  \[ S_n/n \longrightarrow \mu \]
+
+  e si legge " converge in probabilità (o in senso debole)".
+
+  \section{Disuguaglianza di Markov}
+  Sia $Y$ una v.c. che assume valori non negativi allora per ogni numero reale $a>0$
+  \[ Pr(Y \geq a) \leq \frac{\mathbb{E}(Y)}{a} \]
+
+  \section{Disuguaglianza di Chebychev}
+  Sia $Y$ una v.c. con valore atteso $\mathbb{E}(Y) = \mu$ e varianza $\mathbb{V}ar(Y) = \sigma^2$. Allora
+  \[ Pr(|Y-\mu| \geq \epsilon) \leq \frac{\sigma^2}{\epsilon^2} \]
+
+
+
+
+
+
+
+
 
 
 
