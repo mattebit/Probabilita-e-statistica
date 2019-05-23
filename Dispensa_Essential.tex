@@ -8,9 +8,15 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 
+\title{Dispense essenziali di Probabilità e Statistica}
+\author{Matteo Bitussi \\ Laurea in Informatica, Unitn}
+\date{Anno accademico 2018-2019}
+
 \begin{document}
+  \maketitle
   \tableofcontents
-  \chapter{Dispense Essential di Probabilità e Statistica}
+
+  \chapter{Probabilità}
 
   \section{Insieme delle parti di $\Omega$: $P(\Omega)$}
   Dato l'insieme $\Omega$ si dice \textbf{Insieme delle Parti} o \textbf{Insieme Potenza} di $\Omega$ l'insieme $P(\Omega)$ di tutti i possibili sottoinsiemi di $\Omega$.
@@ -55,21 +61,21 @@
   Se $A_1, A_2, ..., A_n$ non sono eventi, allora
   \[ \sum_{i=1}^{n} Pr(A_i) - \sum_{1_\leq i \leq j \leq n} Pr(A_i \cap A_j) \leq Pr(\bigcup\limits_{i=1}^{n} A_i) \leq \sum_{i=1}^{n} Pr(A_i),     n \geq 1 \]
 
-  \section{Calcolo combinatorio}
-  \subsection{Disposizioni con ripetizione}
+  \chapter{Calcolo combinatorio}
+  \section{Disposizioni con ripetizione}
   Dato un insieme $S = {a_1,a_2,...,a_n}$ di $n$ oggetti distinti, il numero degli allineamenti che si possono formare con $k$ oggetti scelti tra gli $n$ - ritenendo diversi due allineamenti, o perchè contengono oggetti differenti o perche gli stessi oggetti si susseguono in ordine diverso o, infine, perchè uno stesso oggetto si ripete un numero diverso di volte - è dato da
   \[ D_{n,k}^* = n^k \]
   Ogni allineamento si dice disposizione con ripetizione di $n$ oggetti di classe $k$.
 
-  \subsection{Disposizioni senza ripetizione}
+  \section{Disposizioni senza ripetizione}
   Dato un insieme $S={a_1,a_2,...,a_n}$ di $n$ oggetti distinti, il numero degli allineamenti che si possono formare con $1 \leq k \leq n$ ogetti scelti tra gli $n$ - ritenendo diversi due allineamenti o perchè contengono oggetti differenti o perchè gli stessi oggetti si susseguono in ordine diverso - è dato da
   \[ D_{n,k} = n(n-1)(n-2)...(n-k + 1) \]
   Ogni allineamento si dice disposizione semplice o senza ripetizione di $n$ oggetti di classe $k$
 
-  \subsection{Permutazioni}
+  \section{Permutazioni}
   Dato un insieme $S={a_1,a_2,...,a_n}$ di $n$ oggetti distinti, il numero degli allineamenti che si possono formare con tutti essi - ritenendo diversi due allineamenti perchè gli oggetti si susseguono in ordine diverso - è dato da $n!$
 
-  \subsection{Combinazioni}
+  \section{Combinazioni}
   Dato un insieme $S={a_1,a_2,...,a_n}$ di $n$ oggetti distinti, il numero degli allineamenti che si possono formare con $1 \leq k \leq n$ oggetti scelti tra gli $n$ - ritenendo diversi due allineamenti solo perchè contengono oggetti differenti - è dato da
   \[ C_{n,k} = \frac{D_{n,k}}{k!} \]
   Ogni allineamento si dice combinazione senza ripetizione di $n$ oggetti di classe $k$
@@ -77,8 +83,8 @@
   \section{Cardinalità dell'insieme delle parti di un insieme finito}
   Sia $S_n={a_1,a_2,...,a_n}$ un insieme di $n$ oggetti distinti, allora la cardinalità di $P(S)$ è $ 2^n$
 
-  \section{Probabilità sui reali}
-  \subsection{Tribù borelliana}
+  \chapter{Probabilità sui reali}
+  \section{Tribù borelliana}
   Si chiama Tribù Boreliana di $\mathbb{R}$, e si denota con $\mathcal{B}(\mathbb{R})$, la tribù generata su $\mathbb{R}$ dalla classe di tutti gli intervalli $(a,b]$ di $\mathbb{R}$. I suoi elementi si chiamano gli insiemi boreliani di $\mathbb{B}$. e lo spazio $(\mathbb{R},\mathcal{B}(\mathbb{R}))$ è uno spazio probabilizzabile.\\
   \textbf{Elementi della Tribù Boreliana}\\
   La tribù di Borel su $\mathbb{R}$ contiene anche i seguenti Elementi
@@ -93,7 +99,7 @@
     \item gli insiemi numerabili di $\mathbb{R}$
   \end{enumerate}
 
-  \subsection{Costruzione di una funzione di probabilità su $(\mathbb{R},\mathcal{B}(\mathbb{R}))$}
+  \section{Costruzione di una funzione di probabilità su $(\mathbb{R},\mathcal{B}(\mathbb{R}))$}
   Per procedere all'assegnazione di una funzione di Probabilità agli eventi di $\mathcal{B}(\mathbb{R})$, si fissa la probabilità da attribuire agli intervalli $(a,b]$ mediante una funzione $F(x)$ che è
   \begin{enumerate}
     \item non decrescente
@@ -151,7 +157,7 @@
   \section{Tribù indipendenti}
   Dato uno spazio probabilizzato $(\Omega, \mathcal{A}, Pr)$. Due Tribù contenute in $\mathcal{A}$ si dicono tra loro indipendenti se ogni elemento dell'uno è indipendente da ogni elemento dell'altra.
 
-  \section{Variabile aleatoria}
+  \chapter{Variabili Aleatorie}
   Sia dato lo spazio probabilizzabile $(\Omega, \mathcal{A})$. Si dice \textbf{Variabile aleatoria} (v.a.) ogni funzione a valori reali definita in $\Omega, y = X(\omega)$, tale che
   $$ \{\omega \in \Omega : X(\omega) \leq x\} \in \mathcal{A} $$ per ogni valore reale $x$.
   \begin{enumerate}
@@ -340,7 +346,7 @@
     \item Deviazione standard: $ \sigma = \sqrt{\sigma^2} $
   \end{enumerate}
 
-  \section{Variabili Aleatorie Doppie}
+  \chapter{Variabili Aleatorie Doppie}
   Sia $(\Omega, \mathcal{A}, Pr)$ uno spazio probabilizzato. Siano $X(\omega)$ e $Y(\omega)$ due v.a. definite su $\Omega$ in modo che:
   \[ Z(\omega) = (X(\omega),Y(\omega)) : \Omega \rightarrow \mathbb{R}^2 \]
 
@@ -351,7 +357,7 @@
     E' necessario considerare la seguente funzione di ripartizione (detta congiunta)
   \[ F_Z(z) = F_{X,Y}(x,y) = Pr(\{ X \leq x\} \cap \{ Y \leq y \}) \quad\quad (x,y)\in R_{X,Y} \]
 
-  \subsection{Funzione di probabilità congiunta (discreta)}
+  \section{Funzione di probabilità congiunta (discreta)}
   Per due v.a. discrete $X$ e $Y$, la v.a. doppia $Z=(X,Y)$ (che è discreta) ha funzione di probabilità (congiunta)
 
   \[
@@ -362,7 +368,7 @@
     \end{cases}
   \]
 
-  \subsection{Variabili aleatorie doppie dotate di densità}
+  \section{Variabili aleatorie doppie dotate di densità}
   La v.a. doppia $Z= (X,Y)$ si dirà dotata di densità se esiste una funzione $f_{X,Y}(x,y)$ tale che
   \begin{enumerate}
     \item $f_{X_Y}(x,y) \geq 0, \quad \forall (x,y) \in \mathbb{R}^2$
@@ -372,7 +378,7 @@
   \end{enumerate}
   tale funzione è chiamata densità congiunta $f_Z(z) = f_{X,Y}(x,y)$.
 
-  \subsubsection{Densità marginali}
+  \subsection{Densità marginali}
   Dalle formule di prima abbiamo che
   \[ F_{X,Y}(x,y) = \int_{-\infty}^{x}\int_{-\infty}^{y} f_{X,Y}(u,v)\: du\: dv\]
     E quindi
@@ -381,7 +387,7 @@
     \item Denstià marginale della v.a. $Y$ \[f_Y(y) = \int_{-\infty}^{+\infty} f_{X,Y}(u,y)\: du\]
   \end{enumerate}
 
-  \subsection{Distribuzioni condizionali per v.a. (Probabilità condizionale di $X|Y = y$)}
+  \section{Distribuzioni condizionali per v.a. (Probabilità condizionale di $X|Y = y$)}
   Sia $(X,Y)$ una v.a. doppia discreta con funzione di probabilità
   \[ p_{X,Y}(x,y) = Pr(X = x, Y = y) \]
     allora in accordo con la definizione di probabilità condizionale
@@ -389,15 +395,15 @@
   \[ p_{X_Y}(X=x|Y=y) = Pr(\{ X=x \}|\{ Y=y \}) = \frac{p_{X,Y}(x,y)}{p_Y(y)} \quad y \in R_Y(p_Y(y)>0) \]
   Per ogni valore fissato di $y \in R_Y$ la funzione $p_{X|Y}(X=x|Y=y)$ prende il nome di probabilità condizionale di $X|Y = y$
 
-  \subsection{Distribuzioni condizionali e indipendenza per v.a. (p137 dispense B)}
+  \section{Distribuzioni condizionali e indipendenza per v.a. (p137 dispense B)}
 
-  \subsection{Funzioni di ripartizioni condizionali}
+  \section{Funzioni di ripartizioni condizionali}
   Dalla funzione di probabilità confizionale (nel caso discreto) e dalla densità condizionale (nel caso assolutamente continuo), possiamo costruire le funzioni di ripartizione condizionale
   \[ F_{X|Y}(x|y) = \sum_{u \leq x \: : \: \in R_X} p_{X|Y}(u|y) \]
   e
   \[ F_{X|Y}(x|y) = \int_{-\infty}^{x} f_{X|Y}(u|y) \: du \]
 
-  \subsection{Variabili aleatorie condiionali e speranza matematica}
+  \section{Variabili aleatorie condiionali e speranza matematica}
   Data la v.a. doppia $(X,Y)$ allora la funzione $X|Y = y \: (y \in R_Y)$ è una v.a. con funzione di probabilità $P_{X|Y}(x|y)$.
     Quindi alla definizione di speranza matematica e di varianza abbiamo
 
@@ -405,21 +411,21 @@
   \[ var(X|Y=y)= \quad \sum_{x\in R_X}(x - \mathbb{E}(X|Y=y))^2 p_{X|Y}(x|y) \]
   e in maniera del tutto analoga nel caso di v.a. dotate di densità.
 
-  \subsection{Speranza matematica della speranza matematica condizionale}
+  \section{Speranza matematica della speranza matematica condizionale}
   Ad esempio per v.a. doppie discrete (??il risultato vale nel caso generale??)
   \[ \mathbb{E}(\mathbb{E}(X|Y)) = \mathbb{E}(X) \]
 
-  \subsection{Varianza e Varianza condizionale (Scomposizione della varianza)}
+  \section{Varianza e Varianza condizionale (Scomposizione della varianza)}
   Sia $(X,Y)$ una v.a doppia, allora
   \[ \mathbb(V)ar(X) = \mathbb{E}(\mathbb{V}ar(X|Y)) + \mathbb{V}ar(\mathbb{E}(X|Y)) \]
 
-  \subsection{Dipendenza in media}
+  \section{Dipendenza in media}
   La v.a. $X$ si dice indipendente in media da $Y$ se
   \[ \mathbb{E}(X|Y=y) = \mathbb{E}(X) \quad \forall y \in R_Y \]
 
   Si noti che se $X$ è indipendente stocasticamente da Y allora è anche indipendente in media. Viceversa non è vero, in generale.
 
-  \subsection{Rapporto di correlazione}
+  \section{Rapporto di correlazione}
   Sia $(X,Y)$ una v.a. doppia discreta, si chiama rapporto di correlazione di $X$ dato $Y$
   \[ \eta^2_{X|Y} = \frac{\mathbb{V}ar(\mathbb{E}(X|Y))}{\mathbb{V}ar(X)} = 1- \frac{\mahtbb{E}(\mathbb{V}ar(X|Y))}{\mathbb{V}ar(X)} \quad \mathbb{V}ar(X) > 0\]
 
@@ -435,13 +441,13 @@
   \end{enumerate}
 
   %modificare il simbolo di prodotto con uno più decente
-  \subsection{Covarianza e correlazione}
+  \section{Covarianza e correlazione}
   La covarianza e la correlazione sono altri due indici di dipendenza (lineare) tra due v.a.
   \[ cov(X,Y) = \mathbb{E}(X * Y) - \mathbb{E}(X) * \mathbb{E}(Y) \]
   mentre
   \[ \rho(X,Y) = \frac{cov(X,Y)}{\sqrt{\mathb{V}ar(X)*\mathbb{V}ar(Y)}} \]
 
-  \subsection{Varianza di una combinazione lineare di v.a}
+  \section{Varianza di una combinazione lineare di v.a}
   Sia $(X,Y)$ una v.a. doppia e $a$ e $b$ due costanti. Allora
   \[ \mathbb{V}ar(aX + bY)= a^2\mathbb{V}ar(X) + b^2\mathbb{V}ar(Y) + 2abcov(X,Y) \]
 
