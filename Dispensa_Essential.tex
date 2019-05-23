@@ -14,6 +14,9 @@
 
 \begin{document}
   \maketitle
+  \section{Introduzione}
+  Questa dispensa è pensata per raccogliere le informazioni essenziali necessarie per lo svolgimento degli esercizi durante l'anno e/o per l'esame finale. Per questo motivo non saranno approfondite, e non potranno sostituire quelle fornite dal professore.
+
   \tableofcontents
 
   \chapter{Probabilità}
@@ -23,23 +26,23 @@
 
   \section{Tribù (o $\sigma$-algebra))}
   Una classe $\mathcal{A}$ di parti di un insieme $\Omega$ si dice una \textbf{Tribù} se:\\
-  \begin{enumerate}
+  \begin{itemize}
   \item $\Omega \in \mathcal{A}$
   \item Se $A \in \mathcal{A}$ allora $A^c \in \mathcal{A}$
   \item Se $A_1, ... ,A_i, ... \in \mathcal{A}$ allora $\bigcup\limits_{i=1}^{\infty} F_{i}$
-  \end{enumerate}
+  \end{itemize}
 
   \section{Spazio Probabilizzabile}
   Dato uno spazio campionario $\Omega$ e una tribù $ \mathcal{A}$ su $\Omega$, la coppia $(\Omega,\mathcal{A})$ è detto \textbf{Spazio Probabilizzabile}
 
   \section{Definizione di Probabilità}
   Dato uno spazio probabilizzabile $(\Omega,\mathcal{A})$, una \textbf{Probabilità} $Pr$ è un'applicazione $Pr:\mathcal{A} \longrightarrow \mathbb{R}^+$ tale che:
-  \begin{enumerate}
+  \begin{itemize}
     \item (non negatività) se $A \in \mathcal{A}$ allora $Pr(A) \geq 0$
     \item (normalizzazione) $Pr(\Omega) = 1$
     \item ($\sigma$-addività) Se ${\{A_i\}}_{i=1}^{\infty}$ è una successione di eventi di $\mathcal{A}$ a due a due incompatibili (cioè $A_i \cap A_j = \emptyset, i \neq j$), allora
     \[ Pr(\bigcup\limits_{i=1}^{\infty} A_i) = \sum_{i=1}^{\infty} Pr(A_i) \]
-  \end{enumerate}
+  \end{itemize}
 
   \section{Spazio proabilizzato}
   La terna $(\Omega, \mathcal{A}, Pr)$ dove $\Omega$ è uno spaio campionario, $\mathcal{A}$ è una Tribù su $\Omega$ e $Pr$ è una funzione di probabilità $Pr: \mathcal{A} \longrightarrow \mathbb{R^+}$, è detta \textbf{Spazio di Probabilità} o anche spazio di Kolmogrov.
@@ -86,9 +89,10 @@
   \chapter{Probabilità sui reali}
   \section{Tribù borelliana}
   Si chiama Tribù Boreliana di $\mathbb{R}$, e si denota con $\mathcal{B}(\mathbb{R})$, la tribù generata su $\mathbb{R}$ dalla classe di tutti gli intervalli $(a,b]$ di $\mathbb{R}$. I suoi elementi si chiamano gli insiemi boreliani di $\mathbb{B}$. e lo spazio $(\mathbb{R},\mathcal{B}(\mathbb{R}))$ è uno spazio probabilizzabile.\\
-  \textbf{Elementi della Tribù Boreliana}\\
+
+  \subsubsection{Elementi della tribù Borelliana}
   La tribù di Borel su $\mathbb{R}$ contiene anche i seguenti Elementi
-  \begin{enumerate}
+  \begin{itemize}
     \item $(a,b]$
     \item $[a,b]$
     \item $[a,b)$
@@ -97,24 +101,24 @@
     \item i singoletti di $\mathbb{R}$
     \item gli insiemi finiti di $\mathbb{R}$
     \item gli insiemi numerabili di $\mathbb{R}$
-  \end{enumerate}
+  \end{itemize}
 
   \section{Costruzione di una funzione di probabilità su $(\mathbb{R},\mathcal{B}(\mathbb{R}))$}
   Per procedere all'assegnazione di una funzione di Probabilità agli eventi di $\mathcal{B}(\mathbb{R})$, si fissa la probabilità da attribuire agli intervalli $(a,b]$ mediante una funzione $F(x)$ che è
-  \begin{enumerate}
+  \begin{itemize}
     \item non decrescente
     \item continua da destra per ogni $x \in \mathbb{R}: \lim_{x\to x_0^+}(x) = F(x_0)$ per ogni $x_0 \in \mathbb{R}$
     \item $\lim_{x\to +\infty} F(x) = 1$
     \item $\lim_{x\to -\infty} F(x) = 0$
-  \end{enumerate}
+  \end{itemize}
   ponendo
   \[ Pr((a,b]) = F(b) - F(a) \]
 
   Ad ogni insieme di $\mathcal{B}(\mathbb{R})$ è quindi possibile attribuire una probabilità. Il calcolo effettivo di Pr(A) può essere fatto in modo semplice quando $A$ è
-  \begin{enumerate}
+  \begin{itemize}
     \item un intervallo
     \item un'unione numerabile di intervalli disgiunti
-  \end{enumerate}
+  \end{itemize}
   \[ Pr(\bigcup\limits_{i=1}^{\infty} (a_i,b_i]) = \sum_{i=1}^{\infty} Pr((a_i,b_i]) = \sum_{i=1}^{\infty} (F(b_i)-F(a_i)) \]
 
   \section{Probabilità condizionale}
@@ -127,10 +131,10 @@
 
   \section{Classe Completa di eventi}
   Dato uno spazio probabilizzabile $(\Omega, \mathcal{A})$ la famiglia di eventi ${\{A_i\}_\infty^{i=1}}$ è detta Classe Completa se
-  \begin{enumerate}
+  \begin{itemize}
     \item $\bigcup\limits_{n=1}^{\infty} A_n = \Omega$
     \item $A_i \cap A_j = \emptyset,  i \neq j$
-  \end{enumerate}
+  \end{itemize}
 
   \section{Teorema delle Probabilità Totali}
   Sia ${\{A_i\}_\infty^{i=1}}$ una famiglia di eventi che costituisce una Classe Completa di $\Omega$ tale che
@@ -145,7 +149,7 @@
   $$Pr(A_i|B)=\frac{Pr(A_i)Pr(B|A_i)}{\sum_{j=1}^\infty Pr(A_j)Pr(B|A_j)} \qquad j=1,2,...  $$
 
   \section{Indipendenza stocastica}
-  In uno spazio probabilizzato $(\Omega, \mathcal{A}, P)$ due eventi $A,B$ si dicono tra loro stotasticamente indipendenti se e solo se
+  In uno spazio probabilizzato $(\Omega, \mathcal{A}, P)$ due eventi $A,B$ si dicono tra loro stocasticamente indipendenti se e solo se
   $$Pr(A \cap B) = Pr(A) \cdot Pr(B)$$
 
   In particolare si noti che dati due eventi stocasticamente indipendenti $A, B$ allora:
@@ -160,21 +164,21 @@
   \chapter{Variabili Aleatorie}
   Sia dato lo spazio probabilizzabile $(\Omega, \mathcal{A})$. Si dice \textbf{Variabile aleatoria} (v.a.) ogni funzione a valori reali definita in $\Omega, y = X(\omega)$, tale che
   $$ \{\omega \in \Omega : X(\omega) \leq x\} \in \mathcal{A} $$ per ogni valore reale $x$.
-  \begin{enumerate}
+  \begin{itemize}
     \item Giova osservare che nella definizione la probabilità non gioca alcun ruolo e che quando $\mathcal{A}$ è la classe di tutti i sottoinsiemi di $\Omega$ la condizione nella definizione è sempre soddisfatta.
     \item Per rendersi conto della necessitò di imporre alla funzione $X(\omega)$ la condizione riportata sopra, basterà dire che, intendendo assegnare una probabilità agli insiemi $\{\omega \in \Omega : X(\omega) \leq x\}$ per ogni reale $x$ ed avendo probabilizzato la classe $\mathcal{A}$, occore che tali insiemi appartengano ad $A$.
-  \end{enumerate}
+  \end{itemize}
 
   \section{Variabili aleatorie e Tribù}
   Siano $\tilde{\Omega}$ e $\Omega$ due insiemi arbitrari e sia $X: \tilde{\Omega} \rightarrow \Omega$ una funzione. Se $\mathcal{A}$ è una Tribù su $\Omega$ allora:
   $$ \tilde{\mathcal{A}} = \{ X^{-1}(A):A \in \mathcal{A} \} $$
   è una Tribù su $\tilde{\Omega}$.
 
-  \subsection{Teorema}
+  \subsection{Teorema 10}
   Siano $\tilde{\Omega}$ e $\Omega$ due insiemi arbitrari e sia $X: \tilde{\Omega} \rightarrow \Omega$ una funzione. Se $\mathcal{A}$ è una Tribù su $\Omega$ allora:
   $$ \tilde{\mathcal{A}} = \{ A \in \subseteq \Omega: X^{-1}(A) \in \tilde{\mathcal{A}}\} $$
 
-  \subsection{Teorema}
+  \subsection{Teorema 12}
   Ogni funzione contiuna oppure monotona crescente o decrescente $f:(\mathbb{R},\mathcal{B}(\mathbb{R})) \rightarrow (\mathbb{R},\mathcal{B}(\mathbb{R})) $ è una variabile aleatoria.
 
   \section{Variabili aleatorie e funzioni di probabilità p.71}
@@ -210,10 +214,10 @@
    La distibuzione binomiale descrive la probabilità di avere esattamente $x$ successi, provando $N$ volte, con $p$ probabilità di vittoria di un singolo evento.
 
    \subsubsection{Propietà}
-   \begin{enumerate}
+   \begin{itemize}
      \item Media: $\mathbb{E}(X) = Np$
      \item Varianza: $\mathbb{V}ar(X) = Np(1-p)$
-   \end{enumerate}
+   \end{itemize}
 
    \subsection{Funzione di ripartizione}
    Sia $X$ una v.a.. Si dice funzione di ripartizione della v.a. $X$ la funzione $y=F(x)$, definita per ogni $x$ reale, data da
@@ -237,11 +241,11 @@
   \]
   e scriveremo $X \sim Ge(p)$.
   \subsubsection{Propietà}
-  \begin{enumerate}
+  \begin{itemize}
     \item Funzione di ripartizione: $F(x) =   1-(1-p)^x$
     \item Momento secondo: $ \mathbb{E}(X^2) = \frac{2-p}{p^2} $
     \item Varianza: $ \mathbb{V}ar(X) = \mathbb{E}(X^2) - [\mathbb{E}(X)]^2 = \frac{1-p}{p^2} $
-  \end{enumerate}
+  \end{itemize}
 
 
 
@@ -273,10 +277,10 @@
 
   \[ Pr(X \in (a,b]) = Pr(a < X \leq b) = \int_{a}^{b} f(x)  dx \]
   in cui $f(x)$ prende il nome di funzione di densità di probabilità della v.a. $X$ e deve avere le seguenti caratteristiche
-  \begin{enumerate}
+  \begin{itemize}
     \item $f(x) > 0$ per ogni $x \in \mathbb{R}$
     \item $\int_{-\infty}^{+\infty} f(x) dx = 1$
-  \end{enumerate}
+  \end{itemize}
 
   \subsection{Variabili aleatorie assolutamente continue}
   Una v.a. $X$ definita su $(\Omega, \mathcal{A})$ è detta assolutamente continua se la sua funzione di ripartizione è continua e la sua v.a. $X$ ammette densità.
@@ -293,10 +297,10 @@
   e la indichiamo con $X \sim N(\mu, \sigma^2)$. La v.a. $X \sim N(0,1)$ è chiamata Normale Standard.
 
   \subsubsection{Proprietà}
-  \begin{enumerate}
+  \begin{itemize}
     \item Valore atteso: $\mathbb{E}(X) = \mu$
     \item Varianza: $\mathbb{V}ar(X) = \sigma^2$
-  \end{enumerate}
+  \end{itemize}
 
   \subsection{Standardizzazione di una Normale}
   Data una $X \sim N(\mu,\sigma^2)$, Allora
@@ -316,12 +320,12 @@
 
   e la indichiamo nel seguente modo $X \sim Exp(\lambda)$. La distribuzione Esponenziale è senza memoria.
   \subsubsection{Propietà}
-  \begin{enumerate}
+  \begin{itemize}
     \item Media: $\mathbb{E}(X) = \frac{1}{\lambda}$
     \item Varianza: $\mathbb{V}ar(X) = \frac{1}{\lambda^2}$
     \item Funzione di ripartizione: $F(x) = 1-e^{-\lambda x}$
     \item Il minimo $Y = min\{X_1,...,X_n\} $ tra $n$ variabili aleatorie indipendenti con distribuzioni esponenziali di parametri $ \lambda_1,...,\lambda_n $ è ancora una variabile aleatoria con distribuzione esponenziale, di parametro $ \lambda = \lambda_1 + ... + \lambda_n$.
-  \end{enumerate}
+  \end{itemize}
 
 
   \subsection{Trasformazione di variabili aleatorie p.104 (manca)}
@@ -340,11 +344,11 @@
   \[ \bar{\mu_r} = \mathbb{E}((x-\mu_1)^r)  \]
 
   \subsubsection{Valori di sintesi basati sui momenti}
-  \begin{enumerate}
+  \begin{itemize}
     \item Media: $ \mu = \mu_1 = \mathbb{E}(X) $
     \item Varianza: $ \mathbb{V}ar(X) = \sigma^2 = \bar{\mu_2} = \mathbb{E}((x-\mu_1)^2) = \mathbb{E}(X^2) - \mathbb{E}(X)^2 $
     \item Deviazione standard: $ \sigma = \sqrt{\sigma^2} $
-  \end{enumerate}
+  \end{itemize}
 
   \chapter{Variabili Aleatorie Doppie}
   Sia $(\Omega, \mathcal{A}, Pr)$ uno spazio probabilizzato. Siano $X(\omega)$ e $Y(\omega)$ due v.a. definite su $\Omega$ in modo che:
@@ -370,22 +374,22 @@
 
   \section{Variabili aleatorie doppie dotate di densità}
   La v.a. doppia $Z= (X,Y)$ si dirà dotata di densità se esiste una funzione $f_{X,Y}(x,y)$ tale che
-  \begin{enumerate}
+  \begin{itemize}
     \item $f_{X_Y}(x,y) \geq 0, \quad \forall (x,y) \in \mathbb{R}^2$
     \[ \int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty} f_{X,Y}(x,y)\: dx\: dy \]
     \item \[Pr(a < x \leq b, c < y \leq d) = \int_{-\infty}^{x}\int_{-\infty}^{y} f_{X,Y}(u,v)\: du\: dv \]
 
-  \end{enumerate}
+  \end{itemize}
   tale funzione è chiamata densità congiunta $f_Z(z) = f_{X,Y}(x,y)$.
 
   \subsection{Densità marginali}
   Dalle formule di prima abbiamo che
   \[ F_{X,Y}(x,y) = \int_{-\infty}^{x}\int_{-\infty}^{y} f_{X,Y}(u,v)\: du\: dv\]
     E quindi
-  \begin{enumerate}
+  \begin{itemize}
     \item Densità marginale della v.a. $X$ \[f_X(x) = \int_{-\infty}^{+\infty} f_{X,Y}(x,v)\: dv\]
     \item Denstià marginale della v.a. $Y$ \[f_Y(y) = \int_{-\infty}^{+\infty} f_{X,Y}(u,y)\: du\]
-  \end{enumerate}
+  \end{itemize}
 
   \section{Distribuzioni condizionali per v.a. (Probabilità condizionale di $X|Y = y$)}
   Sia $(X,Y)$ una v.a. doppia discreta con funzione di probabilità
@@ -434,11 +438,11 @@
 
   inoltre
   %Elenco puntato invece che numerato
-  \begin{enumerate}
+  \begin{itemize}
     \item se $\eta_{X|Y}^2 = 0$ allora $X$ è indipendente in media da $Y$
     \item se $\eta_{X|Y}^2 > 0$ allora $X$ è indipendente in media da $Y$
     \item $\eta_{X|Y}^2 = 1$ se e solo se $Pr(X = \mathbb{E}(X|Y)) = 1$
-  \end{enumerate}
+  \end{itemize}
 
   %modificare il simbolo di prodotto con uno più decente
   \section{Covarianza e correlazione}
