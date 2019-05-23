@@ -458,7 +458,7 @@
   %Skippato il chi^2 di pearson p.143 disp. B
 
   \chapter{Teoremi limite della probabilità}
-  \section{Legge debole dei grandi numeri}
+  \section{Convergenza in probabilità (o debole)}
   Ci sono diversi modi per esprimere il fatto che $S_n/n$ si avvicina a $p$. Potremmo ad esempio scrivere che, per $n$ grande e per $\epsilon$ piccolo a piacere
 
   \[ Pr\{ |S_n/n -p| \geq \epsilon \} \approx 0 \]
@@ -469,7 +469,29 @@
   \[ p \]
   \[ S_n/n \longrightarrow \mu \]
 
-  e si legge " converge in probabilità (o in senso debole)".
+  e si legge \textbf{converge in probabilità (o in senso debole)} ad una v.c. $Y$ se, per ogni $\epsilon > 0$,
+
+  \[ \lim_{n \to \infty} Pr(|Y_n - Y| \geq \epsilon) = 0, \]
+  ovvero
+  \[ \lim_{n \to \infty} Pr(|Y_n - Y| \leq \epsilon) = 1, \]
+
+  \section{Convergenza in media quadratica}
+  Un'altra formalizzazione del concetto di "vicinanza" potrebbe richiedere che in media gli scostamenti (al quadrato) di $S_n/n$ da $p$ siano piccoli, quando $n$ è grande:
+  \[\mathbb{E}[(S_n/n - p)^2] \approx 0, \]
+  o equivalentemente
+  \[ \lim_{n \to \infty} \mathbb{E}[(S_n/n - p)^2] = 0. \]
+  In simboli questo tipo di convergenza si denota con
+  %mettere m.q. sopra la freccia
+  \[ m.q. \]
+  \[ S_n/n \longrightarrow p \]
+  e si legge "\textbf{converge in media quadratica}".\\
+  Più in generale diremo che una successione $Y_1,Y_2,...$ \textbf{converge in media quadratica} ad una v.c. $Y$ se
+  \[ \lim_{n \to \infty} \mathbb{E}[(Y_n - Y)^2] = 0. \]
+
+  \subsubsection{Proposizione}
+  La convergenza in media quadratica implica la convergenza in Probabilità:
+  \[ m.q. \quad \quad \quad P\]
+  \[ Y_n \rightarrow Y \Rightarrow Y_n \rightarrow Y \]
 
   \section{Disuguaglianza di Markov}
   Sia $Y$ una v.c. che assume valori non negativi allora per ogni numero reale $a>0$
@@ -478,6 +500,28 @@
   \section{Disuguaglianza di Chebychev}
   Sia $Y$ una v.c. con valore atteso $\mathbb{E}(Y) = \mu$ e varianza $\mathbb{V}ar(Y) = \sigma^2$. Allora
   \[ Pr(|Y-\mu| \geq \epsilon) \leq \frac{\sigma^2}{\epsilon^2} \]
+
+  \section{Somme di variabili casuali}
+  \subsubsection{Proposizione}
+  Siano $Y_1,...,Y_n$ v.c. con valore atteso rispettivamente $\mu_1,...,\mu_n$. allora
+  \[ \mathbb{E}(Y_1 + ... + Y_n) = \mu_1 + ... + \mu_n \]
+
+  \subsubsection{Proposizione}
+  Siano $Y_1,...,Y_n$ v.c. indipendenti con varianza $\sigma_1^2, ..., \sigma_n^2$ rispettivamente. Allora
+  \[ \mathbb{V}ar(Y_1 + ... + Y_n) = \sigma_1^2 + ... + \sigma_n^2 \]
+
+  \subsubsection{Proposizione}
+  Siano $Y_1,...,Y_n$ v.c. indipendenti, tutte con valore atteso $\mu$ e varianza $\sigma^2$ e sia $\overline{Y}_n = \sum_{i = 1}^n Y_i/n.$ Allora
+  \[ \mathbb{E}(\overline{Y}_n) = \sum_{i = 1}^n \frac{\mathbb{E}(Y_i)}{n} = n\frac{\mu}{n}= \mu,\]
+  \[ \mathbb{V}ar(\overline{Y}_n)= \sum_{i=1}^n \frac{\mathbb{V}ar(Y_i)}{n^2} = n\frac{\sigma^2}{n^2} = \frac{\sigma^2}{n}. \]
+
+  \section{Legge debole dei grandi numeri}
+  Sia $Y_1, Y_2, ...$ una successione di v.c. indipendenti, ciascuna con valore atteso $\mu$ e varianza $\sigma^2$. Allora, per ogni $\epsilon > 0$,
+  \[ lim_{n \to \infty} Pr\{ |\overline{Y}_n -\mu| \geq \epsilon \} = 0 \]
+  %aggiungere P sopra la freccia
+  ovvero $\overline{Y}_n \rightarrow \mu$
+
+  p.151
 
 
 
