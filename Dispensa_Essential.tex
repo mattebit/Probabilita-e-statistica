@@ -1,11 +1,14 @@
 \documentclass[a4paper]{report}
+
 \usepackage[top=25mm,bottom=25mm]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage[italian]{babel}
 \usepackage[T1]{fontenc}
+
 \usepackage{amssymb}
 \usepackage{mathtools}
 \usepackage{graphicx}
+
 \usepackage{hyperref}
 
 \title{Dispense essenziali di Probabilità e Statistica}
@@ -14,10 +17,11 @@
 
 \begin{document}
   \maketitle
-  \section*{Introduzione}
-  Questa dispensa è pensata per raccogliere le informazioni essenziali necessarie per lo svolgimento degli esercizi durante l'anno e/o per l'esame finale. Per questo motivo non saranno approfondite e non potranno sostituire quelle fornite dal professore.
 
   \tableofcontents
+
+  \section*{Introduzione}
+  Questa dispensa è pensata per raccogliere le informazioni essenziali necessarie per lo svolgimento degli esercizi durante l'anno e/o per l'esame finale. Per questo motivo non saranno approfondite e non potranno sostituire quelle fornite dal professore.
 
   \chapter{Probabilità}
 
@@ -29,11 +33,11 @@
   \begin{itemize}
   \item $\Omega \in \mathcal{A}$
   \item Se $A \in \mathcal{A}$ allora $A^c \in \mathcal{A}$
-  \item Se $A_1, ... ,A_i, ... \in \mathcal{A}$ allora $\bigcup\limits_{i=1}^{\infty} F_{i}$
+  \item Se $A_1, \dots ,A_i, \dots \in \mathcal{A}$ allora $\bigcup\limits_{i=1}^{\infty} F_{i}$
   \end{itemize}
 
   \section{Spazio Probabilizzabile}
-  Dato uno spazio campionario $\Omega$ e una tribù $ \mathcal{A}$ su $\Omega$, la coppia $(\Omega,\mathcal{A})$ è detto \textbf{Spazio Probabilizzabile}
+  Dato uno spazio campionario $\Omega$ e una tribù $\mathcal{A}$ su $\Omega$, la coppia $(\Omega,\mathcal{A})$ è detto \textbf{Spazio Probabilizzabile}
 
   \section{Definizione di Probabilità}
   Dato uno spazio probabilizzabile $(\Omega,\mathcal{A})$, una \textbf{Probabilità} $Pr$ è un'applicazione $Pr:\mathcal{A} \longrightarrow \mathbb{R}^+$ tale che:
@@ -45,7 +49,7 @@
   \end{itemize}
 
   \section{Spazio proabilizzato}
-  La terna $(\Omega, \mathcal{A}, Pr)$ dove $\Omega$ è uno spaio campionario, $\mathcal{A}$ è una Tribù su $\Omega$ e $Pr$ è una funzione di probabilità $Pr: \mathcal{A} \longrightarrow \mathbb{R^+}$, è detta \textbf{Spazio di Probabilità} o anche spazio di Kolmogrov.
+  La terna $(\Omega, \mathcal{A}, Pr)$ dove $\Omega$ è uno spaio campionario, $\mathcal{A}$ è una Tribù su $\Omega$ e $Pr$ è una funzione di probabilità $Pr\colon \mathcal{A} \longrightarrow \mathbb{R^+}$, è detta \textbf{Spazio di Probabilità} o anche spazio di Kolmogrov.
 
   \section{Regole di calcolo delle probabilità}
   \subsection{Regola 1}
@@ -58,37 +62,37 @@
 
   \subsection{Regola 3}
   Se $A$ è un evento che implica l'evento $B$, cioè se $A \subseteq B$, allora
-  \[ Pr(B) = Pr(A) + Pr(B \cap A^c) \geq Pr(A) \]
+  \[ Pr(B) = Pr(A) + Pr(B \cap {A}^{c}) \geq Pr(A) \]
 
   \subsection{Regola 4 (Disuguaglianza di Bonferroni)}
-  Se $A_1, A_2, ..., A_n$ non sono eventi, allora
-  \[ \sum_{i=1}^{n} Pr(A_i) - \sum_{1_\leq i \leq j \leq n} Pr(A_i \cap A_j) \leq Pr(\bigcup\limits_{i=1}^{n} A_i) \leq \sum_{i=1}^{n} Pr(A_i),     n \geq 1 \]
+  Se $A_1, A_2, \dots, A_n$ non sono eventi, allora
+  \[ \sum_{i=1}^{n} Pr(A_i) - \sum_{1_\leqslant i \leqslant j \leqslant n} Pr(A_i \cap A_j) \leqslant Pr(\bigcup\limits_{i=1}^{n} A_i) \leqslant \sum_{i=1}^{n} Pr(A_i),     n \geq 1 \]
 
   \chapter{Calcolo combinatorio}
   \section{Disposizioni con ripetizione}
-  Dato un insieme $S = {a_1,a_2,...,a_n}$ di $n$ oggetti distinti, il numero degli allineamenti che si possono formare con $k$ oggetti scelti tra gli $n$ - ritenendo diversi due allineamenti, o perchè contengono oggetti differenti o perche gli stessi oggetti si susseguono in ordine diverso o, infine, perchè uno stesso oggetto si ripete un numero diverso di volte - è dato da
+  Dato un insieme $S = {a_1,a_2,\dots,a_n}$ di $n$ oggetti distinti, il numero degli allineamenti che si possono formare con $k$ oggetti scelti tra gli $n$ - ritenendo diversi due allineamenti, o perchè contengono oggetti differenti o perche gli stessi oggetti si susseguono in ordine diverso o, infine, perchè uno stesso oggetto si ripete un numero diverso di volte - è dato da
   \[ D_{n,k}^* = n^k \]
   Ogni allineamento si dice disposizione con ripetizione di $n$ oggetti di classe $k$.
 
   \section{Disposizioni senza ripetizione}
-  Dato un insieme $S={a_1,a_2,...,a_n}$ di $n$ oggetti distinti, il numero degli allineamenti che si possono formare con $1 \leq k \leq n$ ogetti scelti tra gli $n$ - ritenendo diversi due allineamenti o perchè contengono oggetti differenti o perchè gli stessi oggetti si susseguono in ordine diverso - è dato da
-  \[ D_{n,k} = n(n-1)(n-2)...(n-k + 1) \]
+  Dato un insieme $S={a_1,a_2,\dots,a_n}$ di $n$ oggetti distinti, il numero degli allineamenti che si possono formare con $1 \leqslant k \leqslant n$ ogetti scelti tra gli $n$ - ritenendo diversi due allineamenti o perchè contengono oggetti differenti o perchè gli stessi oggetti si susseguono in ordine diverso - è dato da
+  \[ D_{n,k} = n(n-1)(n-2)\dots(n-k + 1) \]
   Ogni allineamento si dice disposizione semplice o senza ripetizione di $n$ oggetti di classe $k$
 
   \section{Permutazioni}
-  Dato un insieme $S={a_1,a_2,...,a_n}$ di $n$ oggetti distinti, il numero degli allineamenti che si possono formare con tutti essi - ritenendo diversi due allineamenti perchè gli oggetti si susseguono in ordine diverso - è dato da $n!$
+  Dato un insieme $S={a_1,a_2,\dots,a_n}$ di $n$ oggetti distinti, il numero degli allineamenti che si possono formare con tutti essi - ritenendo diversi due allineamenti perchè gli oggetti si susseguono in ordine diverso - è dato da $n!$
 
   \section{Combinazioni}
-  Dato un insieme $S={a_1,a_2,...,a_n}$ di $n$ oggetti distinti, il numero degli allineamenti che si possono formare con $1 \leq k \leq n$ oggetti scelti tra gli $n$ - ritenendo diversi due allineamenti solo perchè contengono oggetti differenti - è dato da
+  Dato un insieme $S={a_1,a_2,\dots,a_n}$ di $n$ oggetti distinti, il numero degli allineamenti che si possono formare con $1 \leqslant k \leqslant n$ oggetti scelti tra gli $n$ - ritenendo diversi due allineamenti solo perchè contengono oggetti differenti - è dato da
   \[ C_{n,k} = \frac{D_{n,k}}{k!} \]
   Ogni allineamento si dice combinazione senza ripetizione di $n$ oggetti di classe $k$
 
   \section{Cardinalità dell'insieme delle parti di un insieme finito}
-  Sia $S_n={a_1,a_2,...,a_n}$ un insieme di $n$ oggetti distinti, allora la cardinalità di $P(S)$ è $ 2^n$
+  Sia $S_n={a_1,a_2,\dots,a_n}$ un insieme di $n$ oggetti distinti, allora la cardinalità di $P(S)$ è $ 2^n$
 
   \chapter{Probabilità sui reali}
   \section{Tribù borelliana}
-  Si chiama Tribù Boreliana di $\mathbb{R}$, e si denota con $\mathcal{B}(\mathbb{R})$, la tribù generata su $\mathbb{R}$ dalla classe di tutti gli intervalli $(a,b]$ di $\mathbb{R}$. I suoi elementi si chiamano gli insiemi boreliani di $\mathbb{B}$. e lo spazio $(\mathbb{R},\mathcal{B}(\mathbb{R}))$ è uno spazio probabilizzabile.\\
+  Si chiama Tribù Boreliana di $\mathbb{R}$, e si denota con $\mathcal{B}(\mathbb{R})$, la tribù generata su $\mathbb{R}$ dalla classe di tutti gli intervalli $(a,b]$ di $\mathbb{R}$. I suoi elementi si chiamano gli insiemi boreliani di $\mathbb{B}$. e lo spazio $(\mathbb{R},\mathcal{B}(\mathbb{R}))$ è uno spazio probabilizzabile.
 
   \subsubsection{Elementi della tribù Borelliana}
   La tribù di Borel su $\mathbb{R}$ contiene anche i seguenti Elementi
@@ -138,15 +142,15 @@
 
   \section{Teorema delle Probabilità Totali}
   Sia ${\{A_i\}_\infty^{i=1}}$ una famiglia di eventi che costituisce una Classe Completa di $\Omega$ tale che
-  \[ Pr(A_i) > 0, i = 1,2,... \]
+  \[ Pr(A_i) > 0, i = 1,2,\dots \]
   Sia $B$ un qualunque evento. allora
   \[ Pr(B) = \sum_{i=1}^\infty Pr(A_i \cap B) = \sum_{i=1}^\infty Pr(A_i)Pr(B|A_i) \]
 
   \section{Teorema di Bayes}
   Sia ${\{A_\}}_{i=1}^\infty$ una Classe Completa di eventi tale che:\\
-  $$Pr(A_i) > 0, i = 1,2,...$$
+  $$Pr(A_i) > 0, i = 1,2,\dots$$
   e $B$ un qualunque evento con $Pr(B)>0$. allora
-  $$Pr(A_i|B)=\frac{Pr(A_i)Pr(B|A_i)}{\sum_{j=1}^\infty Pr(A_j)Pr(B|A_j)} \qquad j=1,2,...  $$
+  $$Pr(A_i|B)=\frac{Pr(A_i)Pr(B|A_i)}{\sum_{j=1}^\infty Pr(A_j)Pr(B|A_j)} \qquad j=1,2,\dots  $$
 
   \section{Indipendenza stocastica}
   In uno spazio probabilizzato $(\Omega, \mathcal{A}, P)$ due eventi $A,B$ si dicono tra loro stocasticamente indipendenti se e solo se
@@ -163,10 +167,10 @@
 
   \chapter{Variabili Aleatorie}
   Sia dato lo spazio probabilizzabile $(\Omega, \mathcal{A})$. Si dice \textbf{Variabile aleatoria} (v.a.) ogni funzione a valori reali definita in $\Omega, y = X(\omega)$, tale che
-  $$ \{\omega \in \Omega : X(\omega) \leq x\} \in \mathcal{A} $$ per ogni valore reale $x$.
+  $$ \{\omega \in \Omega : X(\omega) \leqslant x\} \in \mathcal{A} $$ per ogni valore reale $x$.
   \begin{itemize}
     \item Giova osservare che nella definizione la probabilità non gioca alcun ruolo e che quando $\mathcal{A}$ è la classe di tutti i sottoinsiemi di $\Omega$ la condizione nella definizione è sempre soddisfatta.
-    \item Per rendersi conto della necessitò di imporre alla funzione $X(\omega)$ la condizione riportata sopra, basterà dire che, intendendo assegnare una probabilità agli insiemi $\{\omega \in \Omega : X(\omega) \leq x\}$ per ogni reale $x$ ed avendo probabilizzato la classe $\mathcal{A}$, occore che tali insiemi appartengano ad $A$.
+    \item Per rendersi conto della necessitò di imporre alla funzione $X(\omega)$ la condizione riportata sopra, basterà dire che, intendendo assegnare una probabilità agli insiemi $\{\omega \in \Omega : X(\omega) \leqslant x\}$ per ogni reale $x$ ed avendo probabilizzato la classe $\mathcal{A}$, occore che tali insiemi appartengano ad $A$.
   \end{itemize}
 
   \section{Variabili aleatorie e Tribù}
@@ -181,31 +185,44 @@
   \subsection{Teorema 12}
   Ogni funzione contiuna oppure monotona crescente o decrescente $f:(\mathbb{R},\mathcal{B}(\mathbb{R})) \rightarrow (\mathbb{R},\mathcal{B}(\mathbb{R})) $ è una variabile aleatoria.
 
-  \section{Variabili aleatorie e funzioni di probabilità p.71}
+  \section{Variabili aleatorie e funzioni di probabilità}
+  Il valore che assume la funzione $y = X(\omega): \Omega \rightarrow \mathbb{R}$ in corrispondenza di un esperimento è aleatorio in quanto dipende dal particolare risultato conseguito nell'esperimento \(\omega \in \Omega\); Ci si potrà chiedere con quale probabilità la funzione $X(\omega)$ assuma valore nell'intervallo $(a,b]$ cioè, dare un significato alla scrittura
+  \[ \text{Probabilità di} (a < X \leqslant b) = Pr(X \in (a,b]) = Pr(\{ \omega \in \Omega : a < X \leqslant b \}) \]
+
+  Si osservi a tale scopo che l'intervallo $(a,b]$ e l'insieme $A$
+  \[ A = \{ \omega \in \Omega : a < X(\omega) \leq b\} \in \mathcal{A} \]
+
+  sono in un certo senso equivalenti giacchè quando si verifica $A$, cioè $\omega \in \mathcal{A}$, allora $X \in (a,b]$ e viceversa. Dato che all'evento $A$ è assegnata $Pr(A)$, si potrà porre, per ogni $a<b$,
+  \[ Pr_X((a,b]) = Pr(X \in (a,b]) = Pr(\{ \omega \in \Omega : a < X \leqslant b \})\]
+
+  La funzione di probabilità $P_X$, definita sulla classe di Borel di $\mathbb{R}$, è nota col nome di distribuzione della v.a. $X$ e mediante essa sarà possibile determinare \\
+  $Pr_X((a,b]) = Pr(X \in (a,b]) = Pr(\{ \omega \in \Omega : a < X \leqslant b \})$
+
+
   \section{Variabili aleatorie discrete}
   Una v.a. $X$ definita su $(\Omega, \mathcal{A})$ è detta discreta se i valori distinti dell'insieme $\bigcup_{\omega \in \Omega} \{ {X(\omega)} \}$ costituiscono un insieme $R_X$ finito o numerabile.
 
   \subsection{Funzione di probabilità (o densità discreta)}
-  Se $X$ è una v.a. discreta con $R_X = {x_1,x_2,...}$, allora la funzione, definita in $\mathbb{R}$, data da
+  Se $X$ è una v.a. discreta con $R_X = {x_1,x_2,\dots}$, allora la funzione, definita in $\mathbb{R}$, data da
   \[
     p(x) =
       \begin{cases}
-         Pr(X = x_i) \g 0 & x = x_i \in R_X \\
+         Pr(X = x_i) > 0 & x = x_i \in R_X \\
          0  & x \not\in R_X
       \end{cases}
   \]
   è detta funzione di probabilità (o densità discreta) della v.a.$X$, $R_X$ viene desso supporto della v.a. $X$.
 
   \subsection{Teorema}
-  Se $X$ è una v.a. discreta con $R_X = \{ x_1,x_2,... \}$ allora
+  Se $X$ è una v.a. discreta con $R_X = \{ x_1,x_2,\dots \}$ allora
   \[ p(x) \geq 0 \] per ogni x reale e \[ \sum_{x\in R_X} p(x) = 1 \]
 
   \subsection{Distribuzione Binomiale}
-  Si dice che una v.a. $X$ si distribuisce secondo la distribuzione di probabilità (o legge) binominale di parametri $N \geq 1$ (intero) e $0 \leq p \leq 1$, se
+  Si dice che una v.a. $X$ si distribuisce secondo la distribuzione di probabilità (o legge) binominale di parametri $N \geq 1$ (intero) e $0 \leqslant p \leqslant 1$, se
   \[
     Pr(X = x) =
       \begin{cases}
-          \binom{N}{x}p^x(1-p)^{N-x} & x = 0, 1, ..., N \\
+          \binom{N}{x}p^x(1-p)^{N-x} & x = 0, 1, \dots, N \\
           0 & altrimenti
       \end{cases}
   \]
@@ -221,7 +238,7 @@
 
    \subsection{Funzione di ripartizione}
    Sia $X$ una v.a.. Si dice funzione di ripartizione della v.a. $X$ la funzione $y=F(x)$, definita per ogni $x$ reale, data da
-   \[ F(x) = Pr(X \leq x) \quad x \in \mathbb{R} \]
+   \[ F(x) = Pr(X \leqslant x) \quad x \in \mathbb{R} \]
 
   \subsubsection{Funzione di ripartizione e funzione di probabilità}
   Per una v.a. discreta, si osservi, a conferma delle propietà generali della funzione di ripartizione, come i punti di discontinuità di $F(x)$ coincidano con i punti di $R_X$ della v.a. e che l'ampiezza del salto in detti punti corrisponde alla funzione di probabilità, cioè
@@ -230,12 +247,12 @@
   \subsection{Distribuzione Geometrica}
   La distribuzione Geometrica nasce con riferimento allo stesso schema che ha condotto alla distribuzione Binomiale ma ora, anzichè contare il numero di successi in $N$ prove indipendenti, interessa il numero delle prove necessarie per ottenere il primo successo.\\
 
-  Si dice che una v.a. $X$ si distribuisce secondo una distribuzione geometrica di parametro $0 \leq p \leq 1$ se la sua funzione di probabilità è
+  Si dice che una v.a. $X$ si distribuisce secondo una distribuzione geometrica di parametro $0 \leqslant p \leqslant 1$ se la sua funzione di probabilità è
 
   \[
     Pr(X=x)=
       \begin{cases}
-        p(1-p)^{x-1} & x = 1,2,3,... \\
+        p(1-p)^{x-1} & x = 1,2,3,\dots \\
         0 & altrove
       \end{cases}
   \]
@@ -250,12 +267,12 @@
 
 
   \subsection{Distribuzione Binomiale negativa (o di Pascal)}
-  Si dice che una v.a. $X$ si distribuisce secondo la distribuzione binomiale negativa di parametri $0 < p \leq 1$ e $r \geq 1$ (intero) se la sua funzione di probabilità è data da
+  Si dice che una v.a. $X$ si distribuisce secondo la distribuzione binomiale negativa di parametri $0 < p \leqslant 1$ e $r \geq 1$ (intero) se la sua funzione di probabilità è data da
 
   \[
     Pr(X=x)=
       \begin{cases}
-          \binom{x-1}{r-1} p^r (1-p)^{x-r} & x=r, r+1, r+2,... \\
+          \binom{x-1}{r-1} p^r (1-p)^{x-r} & x=r, r+1, r+2,\dots \\
           0 & altrove
       \end{cases}
   \]
@@ -267,7 +284,7 @@
 
   \subsubsection{Relazione tra Binomiale e Binomiale negativa (Teorema)}
   Sia $X \sim BiNe(r,p)$ e $Z \sim Bi(N,p)$ allora
-  \[ Pr(Z \geq r) = Pr(X \leq N) \]
+  \[ Pr(Z \geq r) = Pr(X \leqslant N) \]
 
   \section{Variabili aleatorie continue}
   Una v.a. $X$ definita su $(\Omega, \mathcal{A})$ è detta continua se la sua funzione di ripartizione è continua.
@@ -275,7 +292,7 @@
   \subsection{Densità}
   Si dice che la v.a. $X$ è dotata di densità se la probabilità con cui $X$ assume valori nell'intervallo $(a,b]$ è data mediante la formula
 
-  \[ Pr(X \in (a,b]) = Pr(a < X \leq b) = \int_{a}^{b} f(x)  dx \]
+  \[ Pr(X \in (a,b]) = Pr(a < X \leqslant b) = \int_{a}^{b} f(x)  dx \]
   in cui $f(x)$ prende il nome di funzione di densità di probabilità della v.a. $X$ e deve avere le seguenti caratteristiche
   \begin{itemize}
     \item $f(x) > 0$ per ogni $x \in \mathbb{R}$
@@ -324,7 +341,7 @@
     \item Media: $\mathbb{E}(X) = \frac{1}{\lambda}$
     \item Varianza: $\mathbb{V}ar(X) = \frac{1}{\lambda^2}$
     \item Funzione di ripartizione: $F(x) = 1-e^{-\lambda x}$
-    \item Il minimo $Y = min\{X_1,...,X_n\} $ tra $n$ variabili aleatorie indipendenti con distribuzioni esponenziali di parametri $ \lambda_1,...,\lambda_n $ è ancora una variabile aleatoria con distribuzione esponenziale, di parametro $ \lambda = \lambda_1 + ... + \lambda_n$.
+    \item Il minimo $Y = min\{X_1,\dots,X_n\} $ tra $n$ variabili aleatorie indipendenti con distribuzioni esponenziali di parametri $ \lambda_1,\dots,\lambda_n $ è ancora una variabile aleatoria con distribuzione esponenziale, di parametro $ \lambda = \lambda_1 + \dots + \lambda_n$.
   \end{itemize}
 
 
@@ -359,7 +376,7 @@
   Resta da definire la funzione di probabilità di $Z(\omega)$. Le funzioni di ripartizione $F_X(x)$ e $F_Y(y)$ di $X$ e $Y$ rispettivamente, in genere non sono sufficienti per determinare tale propietà.
 
     E' necessario considerare la seguente funzione di ripartizione (detta congiunta)
-  \[ F_Z(z) = F_{X,Y}(x,y) = Pr(\{ X \leq x\} \cap \{ Y \leq y \}) \quad\quad (x,y)\in R_{X,Y} \]
+  \[ F_Z(z) = F_{X,Y}(x,y) = Pr(\{ X \leqslant x\} \cap \{ Y \leqslant y \}) \quad\quad (x,y)\in R_{X,Y} \]
 
   \section{Funzione di probabilità congiunta (discreta)}
   Per due v.a. discrete $X$ e $Y$, la v.a. doppia $Z=(X,Y)$ (che è discreta) ha funzione di probabilità (congiunta)
@@ -377,7 +394,7 @@
   \begin{itemize}
     \item $f_{X_Y}(x,y) \geq 0, \quad \forall (x,y) \in \mathbb{R}^2$
     \[ \int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty} f_{X,Y}(x,y)\: dx\: dy \]
-    \item \[Pr(a < x \leq b, c < y \leq d) = \int_{-\infty}^{x}\int_{-\infty}^{y} f_{X,Y}(u,v)\: du\: dv \]
+    \item \[Pr(a < x \leqslant b, c < y \leqslant d) = \int_{-\infty}^{x}\int_{-\infty}^{y} f_{X,Y}(u,v)\: du\: dv \]
 
   \end{itemize}
   tale funzione è chiamata densità congiunta $f_Z(z) = f_{X,Y}(x,y)$.
@@ -403,7 +420,7 @@
 
   \section{Funzioni di ripartizioni condizionali}
   Dalla funzione di probabilità confizionale (nel caso discreto) e dalla densità condizionale (nel caso assolutamente continuo), possiamo costruire le funzioni di ripartizione condizionale
-  \[ F_{X|Y}(x|y) = \sum_{u \leq x \: : \: \in R_X} p_{X|Y}(u|y) \]
+  \[ F_{X|Y}(x|y) = \sum_{u \leqslant x \: : \: \in R_X} p_{X|Y}(u|y) \]
   e
   \[ F_{X|Y}(x|y) = \int_{-\infty}^{x} f_{X|Y}(u|y) \: du \]
 
@@ -431,10 +448,16 @@
 
   \section{Rapporto di correlazione}
   Sia $(X,Y)$ una v.a. doppia discreta, si chiama rapporto di correlazione di $X$ dato $Y$
-  \[ \eta^2_{X|Y} = \frac{\mathbb{V}ar(\mathbb{E}(X|Y))}{\mathbb{V}ar(X)} = 1- \frac{\mahtbb{E}(\mathbb{V}ar(X|Y))}{\mathbb{V}ar(X)} \quad \mathbb{V}ar(X) > 0\]
+  \[
+  \eta^2_{X\mid Y} =
+  \]
+  \[
+  \frac{ \mathbb{V}ar(\mathbb{E}(X \mid Y)) }{ \mathbb{V}ar(X) } =
+  \]
+  % 1- \frac{\mahtbb{E}(\mathbb{V}ar(X\mid Y))}{\mathbb{V}ar(X)} \quad \mathbb{V}ar(X) > 0\]
 
   E in modo analogo si definisce $\eta_{X|Y}^2$. Dalla formula della scomposizione della varianza è facile vedere che:
-  \[ 0 \leq \eta_{X|Y}^2 \leq 1 \]
+  \[ 0 \leqslant \eta_{X|Y}^2 \leqslant 1 \]
 
   inoltre
   %Elenco puntato invece che numerato
@@ -449,7 +472,7 @@
   La covarianza e la correlazione sono altri due indici di dipendenza (lineare) tra due v.a.
   \[ cov(X,Y) = \mathbb{E}(X * Y) - \mathbb{E}(X) * \mathbb{E}(Y) \]
   mentre
-  \[ \rho(X,Y) = \frac{cov(X,Y)}{\sqrt{\mathb{V}ar(X)*\mathbb{V}ar(Y)}} \]
+  \[ \rho(X,Y) = \frac{cov(X,Y)}{\sqrt{\mathbb{V}ar(X)*\mathbb{V}ar(Y)}} \]
 
   \section{Varianza di una combinazione lineare di v.a}
   Sia $(X,Y)$ una v.a. doppia e $a$ e $b$ due costanti. Allora
@@ -473,7 +496,7 @@
 
   \[ \lim_{n \to \infty} Pr(|Y_n - Y| \geq \epsilon) = 0, \]
   ovvero
-  \[ \lim_{n \to \infty} Pr(|Y_n - Y| \leq \epsilon) = 1, \]
+  \[ \lim_{n \to \infty} Pr(|Y_n - Y| \leqslant \epsilon) = 1, \]
 
   \section{Convergenza in media quadratica}
   Un'altra formalizzazione del concetto di "vicinanza" potrebbe richiedere che in media gli scostamenti (al quadrato) di $S_n/n$ da $p$ siano piccoli, quando $n$ è grande:
@@ -485,7 +508,7 @@
   \[ m.q. \]
   \[ S_n/n \longrightarrow p \]
   e si legge "\textbf{converge in media quadratica}".\\
-  Più in generale diremo che una successione $Y_1,Y_2,...$ \textbf{converge in media quadratica} ad una v.c. $Y$ se
+  Più in generale diremo che una successione $Y_1,Y_2,\dots$ \textbf{converge in media quadratica} ad una v.c. $Y$ se
   \[ \lim_{n \to \infty} \mathbb{E}[(Y_n - Y)^2] = 0. \]
 
   \subsubsection{Proposizione}
@@ -495,28 +518,28 @@
 
   \section{Disuguaglianza di Markov}
   Sia $Y$ una v.c. che assume valori non negativi allora per ogni numero reale $a>0$
-  \[ Pr(Y \geq a) \leq \frac{\mathbb{E}(Y)}{a} \]
+  \[ Pr(Y \geq a) \leqslant \frac{\mathbb{E}(Y)}{a} \]
 
   \section{Disuguaglianza di Chebychev}
   Sia $Y$ una v.c. con valore atteso $\mathbb{E}(Y) = \mu$ e varianza $\mathbb{V}ar(Y) = \sigma^2$. Allora
-  \[ Pr(|Y-\mu| \geq \epsilon) \leq \frac{\sigma^2}{\epsilon^2} \]
+  \[ Pr(|Y-\mu| \geq \epsilon) \leqslant \frac{\sigma^2}{\epsilon^2} \]
 
   \section{Somme di variabili casuali}
   \subsubsection{Proposizione}
-  Siano $Y_1,...,Y_n$ v.c. con valore atteso rispettivamente $\mu_1,...,\mu_n$. allora
-  \[ \mathbb{E}(Y_1 + ... + Y_n) = \mu_1 + ... + \mu_n \]
+  Siano $Y_1,\dots,Y_n$ v.c. con valore atteso rispettivamente $\mu_1,\dots,\mu_n$. allora
+  \[ \mathbb{E}(Y_1 + \dots + Y_n) = \mu_1 + \dots + \mu_n \]
 
   \subsubsection{Proposizione}
-  Siano $Y_1,...,Y_n$ v.c. indipendenti con varianza $\sigma_1^2, ..., \sigma_n^2$ rispettivamente. Allora
-  \[ \mathbb{V}ar(Y_1 + ... + Y_n) = \sigma_1^2 + ... + \sigma_n^2 \]
+  Siano $Y_1,\dots,Y_n$ v.c. indipendenti con varianza $\sigma_1^2, \dots, \sigma_n^2$ rispettivamente. Allora
+  \[ \mathbb{V}ar(Y_1 + \dots + Y_n) = \sigma_1^2 + \dots + \sigma_n^2 \]
 
   \subsubsection{Proposizione}
-  Siano $Y_1,...,Y_n$ v.c. indipendenti, tutte con valore atteso $\mu$ e varianza $\sigma^2$ e sia $\overline{Y}_n = \sum_{i = 1}^n Y_i/n.$ Allora
+  Siano $Y_1,\dots,Y_n$ v.c. indipendenti, tutte con valore atteso $\mu$ e varianza $\sigma^2$ e sia $\overline{Y}_n = \sum_{i = 1}^n Y_i/n.$ Allora
   \[ \mathbb{E}(\overline{Y}_n) = \sum_{i = 1}^n \frac{\mathbb{E}(Y_i)}{n} = n\frac{\mu}{n}= \mu,\]
   \[ \mathbb{V}ar(\overline{Y}_n)= \sum_{i=1}^n \frac{\mathbb{V}ar(Y_i)}{n^2} = n\frac{\sigma^2}{n^2} = \frac{\sigma^2}{n}. \]
 
   \section{Legge debole dei grandi numeri}
-  Sia $Y_1, Y_2, ...$ una successione di v.c. indipendenti, ciascuna con valore atteso $\mu$ e varianza $\sigma^2$. Allora, per ogni $\epsilon > 0$,
+  Sia $Y_1, Y_2, \dots$ una successione di v.c. indipendenti, ciascuna con valore atteso $\mu$ e varianza $\sigma^2$. Allora, per ogni $\epsilon > 0$,
   \[ lim_{n \to \infty} Pr\{ |\overline{Y}_n -\mu| \geq \epsilon \} = 0 \]
   %aggiungere P sopra la freccia
   ovvero $\overline{Y}_n \rightarrow \mu$
